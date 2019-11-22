@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { LessonsComponent } from './lessons/lessons.component';
 import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
+import { LessonService } from './lesson.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [LessonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

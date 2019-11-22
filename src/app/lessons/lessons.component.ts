@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Lesson } from '../lesson';
-import { LESSONS } from '../mock-lessons';
+import { LessonService } from '../lesson.service';
 
 @Component({
   selector: 'app-lessons',
@@ -9,16 +9,22 @@ import { LESSONS } from '../mock-lessons';
 })
 export class LessonsComponent implements OnInit {
 
-  lessons = LESSONS;
+  lessons: Lesson[];
 
   selectedLesson: Lesson;
   onSelect(lesson: Lesson): void {
     this.selectedLesson = lesson;
   }
 
-  constructor() { }
+  getLessons(): void {
+    this.lessonService.getLessons()
+      .subscribe(lessons => this.lessons = lessons);
+  }
+
+  constructor(private lessonService: LessonService) { }
 
   ngOnInit() {
+    this.getLessons();
   }
 
 }
