@@ -8,11 +8,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HttpClientModule } from '@angular/common/http';
 import { LessonsComponent } from './lessons/lessons.component';
+import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LessonsComponent
+    LessonsComponent,
+    LessonDetailComponent
   ],
   imports: [
     BrowserModule,
