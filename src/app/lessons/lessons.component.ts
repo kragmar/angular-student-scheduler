@@ -11,6 +11,11 @@ export class LessonsComponent implements OnInit {
 
   lessons = LESSONS;
 
+  selectedLesson: Lesson;
+  onSelect(lesson: Lesson): void {
+    this.selectedLesson = lesson;
+  }
+
   constructor() { }
 
   ngOnInit() {

@@ -1,6 +1,18 @@
 <h2>My Lessons</h2>
 <ul class="lessons">
-  <li *ngFor="let lesson of lessons">
+  <li *ngFor="let lesson of lessons" (click)="onSelect(lesson)">
     <span class="badge">{{lesson.id}}</span> {{lesson.name}}
   </li>
 </ul>
+
+<div *ngIf="selectedLesson">
+
+  <h2>{{selectedLesson.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedLesson.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedLesson.name" placeholder="name"/>
+    </label>
+  </div>
+
+</div>
