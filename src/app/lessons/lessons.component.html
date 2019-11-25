@@ -1,5 +1,6 @@
 <h2>My Lessons</h2>
 
+<!--
 <ul class="lessons">
   <li *ngFor="let lesson of lessons"
     [class.selected]="lesson === selectedLesson"
@@ -7,11 +8,25 @@
     <span class="badge">{{lesson.id}}</span> {{lesson.name}}
   </li>
 </ul>
+-->
 
 <div class="grid-container">
-  <div class="grid-elem" *ngFor="let lesson of lessons">
-    {{ lesson.name }}
-  </div>
+  <div class="grid-header">Col 1</div>
+  <div class="grid-header">Col 2</div>
+  <div class="grid-header">Col 3</div>
+  <ng-container *ngFor="let lesson of lessons">
+    <ng-container [ngSwitch]="lesson?.id">
+      <div *ngSwitchCase="1" [className]="'grid-elem ' + 'first'">
+        {{ lesson.name }}
+      </div>
+      <div *ngSwitchCase="2" [className]="'grid-elem ' + 'second'">
+        {{ lesson.name }}
+      </div>
+      <div *ngSwitchCase="3" [className]="'grid-elem ' + 'third'">
+        {{ lesson.name }}
+      </div>
+    </ng-container>
+  </ng-container>
 </div>
 
 <app-lesson-detail [lesson]="selectedLesson"></app-lesson-detail>
