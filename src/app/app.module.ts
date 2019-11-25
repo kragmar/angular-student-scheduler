@@ -22,7 +22,7 @@ import { LessonService } from './lesson.service';
     FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [LessonService],
   bootstrap: [AppComponent]
