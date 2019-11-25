@@ -14,7 +14,12 @@
 
 .grid-elem {
   background: #ccc;
-  margin: .2em;
+  margin: .1em;
+}
+
+.grid-elem:hover {
+  background: #ededed;
+  cursor: pointer;
 }
 
 .first, .second, .third {
