@@ -8,5 +8,13 @@ export const LESSONS: Lesson[] = [
     lessonType: 'LESSON',
     student: 'Teszt Elek',
     teacher: 'Admin bá'
+  },
+  {
+    id: 2,
+    lessonDate: '2019-11-26',
+    lessonStart: '1',
+    lessonType: 'LESSON',
+    student: 'Lorem Ipsum',
+    teacher: 'Admin bá'
   }
 ];

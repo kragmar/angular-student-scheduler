@@ -1,5 +1,5 @@
 <td *ngFor="let col of columns; last as isLast">
-  <div>
-    {{ lesson.student }}
+  <div *ngFor="let l of lesson">
+    {{ l.student }}
   </div>
 </td>

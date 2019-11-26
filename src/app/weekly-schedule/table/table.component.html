@@ -8,9 +8,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr class="component-style table-row-component" 
-    *ngFor="let lesson of lessons" 
-    app-table-row [lesson]="lesson" [columns]="columns">
+    <tr *ngFor="let lesson of lessons" 
+    app-table-row [lesson]="lessons" [columns]="columns">
     </tr>
   </tbody>
 </table>
