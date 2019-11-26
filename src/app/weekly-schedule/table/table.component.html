@@ -13,3 +13,23 @@
     </tr>
   </tbody>
 </table>
+
+
+<div class="table">
+  <div class="table__header">Col 1</div>
+  <div class="table__header">Col 2</div>
+  <div class="table__header">Col 3</div>
+  <ng-container *ngFor="let lesson of lessons">
+    <ng-container [ngSwitch]="lesson?.id">
+      <div *ngSwitchCase="1" [className]="'grid-elem ' + 'first'">
+        {{ lesson.name }}
+      </div>
+      <div *ngSwitchCase="2" [className]="'grid-elem ' + 'second'">
+        {{ lesson.name }}
+      </div>
+      <div *ngSwitchCase="3" [className]="'grid-elem ' + 'third'">
+        {{ lesson.name }}
+      </div>
+    </ng-container>
+  </ng-container>
+</div>
