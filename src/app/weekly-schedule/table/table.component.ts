@@ -14,6 +14,12 @@ export class TableComponent implements OnInit {
   constructor(private weeklyService: WeeklyService) { }
 
   ngOnInit() {
+    this.getLessons();
+  }
+
+  getLessons(): void {
+    this.weeklyService.getLessons()
+      .subscribe(lessons => this.lessons = lessons);
   }
 
 }
