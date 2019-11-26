@@ -1,6 +1,12 @@
+import { Lesson } from '../lesson';
+
 export const LESSONS: Lesson[] = [
   {
     id: 1,
-    lessonDate: ''
+    lessonDate: '2019-11-26',
+    lessonStart: '1',
+    lessonType: 'LESSON',
+    student: 'Teszt Elek',
+    teacher: 'Admin bá'
   }
 ];
