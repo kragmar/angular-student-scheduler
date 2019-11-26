@@ -25,7 +25,19 @@
   </div>
   <div class="table__body">
     <div class="table__body__row" *ngFor="let col of columns">
-      <div class="table__body__row__cell" *ngFor="let col of columns">ASD</div>
+      <ng-container class="table__body__row__cell" *ngFor="let lesson of lessons">
+        <ng-container [ngSwitch]="lesson?.id">
+          <div *ngSwitchCase="1" [className]="'table__body__row__cell table__body__row__cell--col1'">
+            {{ lesson.student }}
+          </div>
+          <div *ngSwitchCase="2" [className]="'table__body__row__cell table__body__row__cell--col2'">
+            {{ lesson.student }}
+          </div>
+          <div *ngSwitchCase="3" [className]="'table__body__row__cell table__body__row__cell--col3'">
+            {{ lesson.student }}
+          </div>
+        </ng-container>
+      </ng-container>
     </div>
   </div>
 </div>
