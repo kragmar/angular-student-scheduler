@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Lesson } from '../lesson';
+import { Lesson } from '../services/lesson';
 import { WeeklyService } from '../services/weekly.service';
 
 @Component({
