@@ -1,0 +1,15 @@
+table {
+  border-collapse: collapse;
+  border: .1em solid #000;
+  margin: 1em;
+}
+
+.col-group {
+  width: 10%;
+}
+
+table thead th {
+  padding: .5em;
+  background: #777;
+  color: #fff;
+}
