@@ -10,11 +10,13 @@ import { WeeklyService } from '../services/weekly.service';
 export class TableComponent implements OnInit {
 
   lessons: Lesson[];
+  columns: string[];
 
   constructor(private weeklyService: WeeklyService) { }
 
   ngOnInit() {
     this.getLessons();
+    this.weeklyService.getColumns();
   }
 
   getLessons(): void {
