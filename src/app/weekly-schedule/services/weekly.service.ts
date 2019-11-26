@@ -15,4 +15,8 @@ export class WeeklyService {
     return of(LESSONS);
   }
 
+  getColumns(): string[] {
+    return ["12:50", "13:40", "14:30", "15:20", "16:10", "17:00", "17:50", "18:40", "19:30"];
+  }
+
 }
