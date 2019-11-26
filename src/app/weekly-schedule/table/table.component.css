@@ -1,5 +1,6 @@
 .table {
   display: grid;
+  grid-template-columns: .1fr .9;
   grid-template-areas: 
     ". header-top"
     "header-side body";
@@ -28,6 +29,7 @@
   align-items: flex-start;
   border: .1em solid #000;
   padding: .5em;
+  width: auto;
 }
 
 .table__header__side__cell {
@@ -50,7 +52,6 @@
 }
 
 .table__body__row__cell {
-
   border: .1em solid #f00;
   width: 100%;
 }
