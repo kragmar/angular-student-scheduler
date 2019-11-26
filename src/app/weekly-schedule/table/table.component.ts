@@ -16,7 +16,7 @@ export class TableComponent implements OnInit {
 
   ngOnInit() {
     this.getLessons();
-    this.weeklyService.getColumns();
+    this.columns = this.weeklyService.getColumns();
   }
 
   getLessons(): void {
