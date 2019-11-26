@@ -10,7 +10,63 @@ export const LESSONS: Lesson[] = [
     teacher: 'Admin bá'
   },
   {
-    id: 2,
+    id: 1,
+    lessonDate: '2019-11-26',
+    lessonStart: '1',
+    lessonType: 'LESSON',
+    student: 'Lorem Ipsum',
+    teacher: 'Admin bá'
+  },
+  {
+    id: 3,
+    lessonDate: '2019-11-26',
+    lessonStart: '1',
+    lessonType: 'LESSON',
+    student: 'Lorem Ipsum',
+    teacher: 'Admin bá'
+  },
+  {
+    id: 4,
+    lessonDate: '2019-11-26',
+    lessonStart: '1',
+    lessonType: 'LESSON',
+    student: 'Teszt Elek',
+    teacher: 'Admin bá'
+  },
+  {
+    id: 5,
+    lessonDate: '2019-11-26',
+    lessonStart: '1',
+    lessonType: 'LESSON',
+    student: 'Lorem Ipsum',
+    teacher: 'Admin bá'
+  },
+  {
+    id: 6,
+    lessonDate: '2019-11-26',
+    lessonStart: '1',
+    lessonType: 'LESSON',
+    student: 'Lorem Ipsum',
+    teacher: 'Admin bá'
+  },
+  {
+    id: 7,
+    lessonDate: '2019-11-26',
+    lessonStart: '1',
+    lessonType: 'LESSON',
+    student: 'Teszt Elek',
+    teacher: 'Admin bá'
+  },
+  {
+    id: 8,
+    lessonDate: '2019-11-26',
+    lessonStart: '1',
+    lessonType: 'LESSON',
+    student: 'Lorem Ipsum',
+    teacher: 'Admin bá'
+  },
+  {
+    id: 9,
     lessonDate: '2019-11-26',
     lessonStart: '1',
     lessonType: 'LESSON',
