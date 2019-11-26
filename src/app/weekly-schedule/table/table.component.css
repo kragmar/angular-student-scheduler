@@ -1,9 +1,13 @@
 .table {
   display: grid;
+  grid-template-areas: 
+    ". header-top"
+    "header-side body";
   margin: 1em;
 }
 
 .table__header__top {
+  grid-area: header-top;
   display: flex;
   border: .1em solid #000;
   padding: .5em;
@@ -16,6 +20,7 @@
 }
 
 .table__header__side {
+  grid-area: header-side;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -26,4 +31,13 @@
 .table__header__side__cell {
   padding: .5em;
   border: .1em solid #f00;
+}
+
+.table__body {
+  grid-area: body;
+  display: 
+}
+
+.table__body__row {
+  display: flex;
 }
