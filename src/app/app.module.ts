@@ -14,7 +14,6 @@ import { TableComponent } from './weekly-schedule/table/table.component';
 import { TableRowComponent } from './weekly-schedule/table-row/table-row.component';
 import { TableCellComponent } from './weekly-schedule/table-cell/table-cell.component';
 import { WeeklyScheduleComponent } from './weekly-schedule/weekly-schedule.component';
-import { WeeklyServiceService } from './weekly-schedule/weekly-service.service';
 import { WeeklyService } from './weekly-schedule/services/weekly.service';
 
 @NgModule({
@@ -34,7 +33,7 @@ import { WeeklyService } from './weekly-schedule/services/weekly.service';
     BrowserAnimationsModule,
     HttpClientModule,
   ],
-  providers: [LessonService, WeeklyServiceService, WeeklyService],
+  providers: [LessonService, WeeklyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
