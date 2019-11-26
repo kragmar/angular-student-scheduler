@@ -16,12 +16,17 @@ export class TableComponent implements OnInit {
 
   ngOnInit() {
     this.getLessons();
-    this.columns = this.weeklyService.getColumns();
+    this.getColumns();
   }
 
   getLessons(): void {
     this.weeklyService.getLessons()
       .subscribe(lessons => this.lessons = lessons);
+  }
+
+  getColumns(): void {
+    this.weeklyService.getColumns()
+      .subscribe(columns => this.columns = columns);
   }
 
 }
