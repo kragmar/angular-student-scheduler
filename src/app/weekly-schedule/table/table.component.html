@@ -17,10 +17,15 @@
 ------------
 
 <div class="table">
-  <div class="table__header">
-    <div class="table__top-header" *ngFor="let col of columns">{{ col }}</div>
+  <div class="table__header__top">
+    <div class="table__header__top__cell" *ngFor="let col of columns">{{ col }}</div>
   </div>
-  <div class="table__side-header"></div>
+  <div class="table__header__side">
+    <div class="table__header__side__cell" *ngFor="let col of columns">{{ col }}</div>
+  </div>
+  <div class="table__body">
+    
+  </div>
 </div>
 
 
