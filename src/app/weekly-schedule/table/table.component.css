@@ -39,7 +39,7 @@
 .table__body {
   grid-area: body;
   display: grid;
-  grid-template-rows: repeat(5, minmax(.7em, 1fr));
+  grid-template-rows: repeat(5, minmax(1em, 1fr));
   grid-template-areas: 
     "row1"
     "row2"
