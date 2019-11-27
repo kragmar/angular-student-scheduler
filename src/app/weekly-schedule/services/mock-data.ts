@@ -3,7 +3,7 @@ import { Lesson } from './lesson';
 export const LESSONS: Lesson[] = [
   {
     id: 1,
-    lessonDate: '2019-11-26',
+    lessonDate: '2019-11-27',
     lessonStart: 1,
     lessonType: 'LESSON',
     student: 'Teszt Elek',
@@ -11,7 +11,7 @@ export const LESSONS: Lesson[] = [
   },
   {
     id: 1,
-    lessonDate: '2019-11-26',
+    lessonDate: '2019-11-25',
     lessonStart: 2,
     lessonType: 'LESSON',
     student: 'Lorem Ipsum',
@@ -51,7 +51,7 @@ export const LESSONS: Lesson[] = [
   },
   {
     id: 7,
-    lessonDate: '2019-11-26',
+    lessonDate: '2019-11-28',
     lessonStart: 4,
     lessonType: 'LESSON',
     student: 'Teszt Elek',
@@ -59,7 +59,7 @@ export const LESSONS: Lesson[] = [
   },
   {
     id: 8,
-    lessonDate: '2019-11-26',
+    lessonDate: '2019-11-2',
     lessonStart: 5,
     lessonType: 'LESSON',
     student: 'Lorem Ipsum',
