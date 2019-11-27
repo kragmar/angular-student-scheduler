@@ -56,8 +56,7 @@ export class TableComponent implements OnInit {
   getDates(): string[] {
     let dates = new Array<string>();
     for(let i = 0; i < 5; i++) {
-      let month = (this.calcDays(i).getMonth() + 1).toString();
-      let date = this.calcDays(i).getFullYear() + '-' + month + '-' + this.calcDays(i).getDate();
+      let date = this.calcDays(i).getFullYear() + '-' + this.calcDays(i).getMonth() + '-' + this.calcDays(i).getDate();
       dates.push(date);
     }
     return dates;
