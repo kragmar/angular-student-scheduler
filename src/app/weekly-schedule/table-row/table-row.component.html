@@ -1,7 +1,11 @@
 <div class="table__body__row" *ngFor="let col of [1,2,3,4,5]">
   <ng-container class="table__body__row__cell" *ngFor="let lesson of lessons">
+    <div [className]="'table__body__row__cell ' + setCol(lesson) + ' ' + setRow(lesson)">
+      {{ lesson.student }}
+    </div>
+    <!--
     <ng-container [ngSwitch]="lesson?.id">
-      <div *ngSwitchCase="1" class="table__body__row__cell table__body__row__cell--col1">
+      <div *ngSwitchCase="1" [className]="'table__body__row__cell ' + setRow(lesson)">
         {{ lesson.student }}
       </div>
       <div *ngSwitchCase="2" class="table__body__row__cell table__body__row__cell--col2">
@@ -29,5 +33,6 @@
         {{ lesson.student }}
       </div>
     </ng-container>
+    -->
   </ng-container>
 </div>
