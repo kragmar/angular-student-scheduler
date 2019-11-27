@@ -1,3 +1,11 @@
+.table__body__row {
+  display: grid;
+  grid-auto-flow: dense;
+  border: .1em solid #000;
+  padding: .2em;
+  margin: .2em;
+}
+
 .table__body__row__cell {
   border: .1em solid #f00;
   width: 100%;

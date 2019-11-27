@@ -12,7 +12,7 @@ export const LESSONS: Lesson[] = [
   {
     id: 1,
     lessonDate: '2019-11-26',
-    lessonStart: '1',
+    lessonStart: '2',
     lessonType: 'LESSON',
     student: 'Lorem Ipsum',
     teacher: 'Admin bá'
@@ -20,7 +20,7 @@ export const LESSONS: Lesson[] = [
   {
     id: 3,
     lessonDate: '2019-11-26',
-    lessonStart: '1',
+    lessonStart: '2',
     lessonType: 'LESSON',
     student: 'Lorem Ipsum',
     teacher: 'Admin bá'
@@ -28,7 +28,7 @@ export const LESSONS: Lesson[] = [
   {
     id: 4,
     lessonDate: '2019-11-26',
-    lessonStart: '1',
+    lessonStart: '3',
     lessonType: 'LESSON',
     student: 'Teszt Elek',
     teacher: 'Admin bá'
@@ -36,7 +36,7 @@ export const LESSONS: Lesson[] = [
   {
     id: 5,
     lessonDate: '2019-11-26',
-    lessonStart: '1',
+    lessonStart: '3',
     lessonType: 'LESSON',
     student: 'Lorem Ipsum',
     teacher: 'Admin bá'
@@ -44,7 +44,7 @@ export const LESSONS: Lesson[] = [
   {
     id: 6,
     lessonDate: '2019-11-26',
-    lessonStart: '1',
+    lessonStart: '3',
     lessonType: 'LESSON',
     student: 'Lorem Ipsum',
     teacher: 'Admin bá'
@@ -52,7 +52,7 @@ export const LESSONS: Lesson[] = [
   {
     id: 7,
     lessonDate: '2019-11-26',
-    lessonStart: '1',
+    lessonStart: '4',
     lessonType: 'LESSON',
     student: 'Teszt Elek',
     teacher: 'Admin bá'
@@ -60,7 +60,7 @@ export const LESSONS: Lesson[] = [
   {
     id: 8,
     lessonDate: '2019-11-26',
-    lessonStart: '1',
+    lessonStart: '4',
     lessonType: 'LESSON',
     student: 'Lorem Ipsum',
     teacher: 'Admin bá'
@@ -68,7 +68,7 @@ export const LESSONS: Lesson[] = [
   {
     id: 9,
     lessonDate: '2019-11-26',
-    lessonStart: '1',
+    lessonStart: '4',
     lessonType: 'LESSON',
     student: 'Lorem Ipsum',
     teacher: 'Admin bá'

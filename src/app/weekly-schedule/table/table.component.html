@@ -24,11 +24,8 @@
   <div class="table__header__side">
     <div class="table__header__side__cell" *ngFor="let col of [1,2,3,4,5]">{{ col }}</div>
   </div>
-  <div class="table__body">
-    <div class="table__body__row" *ngFor="let col of [1,2,3,4,5]" 
-    app-table-row [lessons]="lessons" [columns]="columns">
-      <!-- table-row component -->
-    </div>
+  <div class="table__body" app-table-row [lessons]="lessons" [columns]="columns">
+    <!-- table-row component -->
   </div>
 </div>
 
