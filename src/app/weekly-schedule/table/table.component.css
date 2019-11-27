@@ -15,7 +15,6 @@
   grid-area: header-top;
   display: flex;
   border: .1em solid #000;
-  padding: .5em;
 }
 
 .table__header__top__cell {
@@ -28,10 +27,7 @@
   grid-area: header-side;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
   border: .1em solid #000;
-  padding: .5em;
 }
 
 .table__header__side__cell {
@@ -43,25 +39,22 @@
 .table__body {
   grid-area: body;
   display: grid;
+  grid-template-rows: repeat(5, minmax(1em, 1fr));
   grid-template-areas: 
     "row1"
     "row2"
     "row3"
     "row4"
     "row5";
-  border: .1em solid #00f;
-  margin: .5em 0 0 .5em;
 }
 
 .table__body__row {
   display: grid;
-  grid-template-columns: repeat(9, .9fr);
+  grid-template-columns: repeat(9, 1fr);
   grid-template-areas: 
     "col1 col2 col3 col4 col5 col6 col7 col8 col9";
   grid-auto-flow: dense;
   border: .1em solid #000;
-  padding: .2em;
-  margin: .2em;
 }
 
 .table__body__row__cell {

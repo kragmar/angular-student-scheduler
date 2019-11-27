@@ -26,17 +26,17 @@ export const LESSONS: Lesson[] = [
     teacher: 'Admin bá'
   },
   {
-    id: 4,
+    id: 1,
     lessonDate: '2019-11-26',
-    lessonStart: 3,
+    lessonStart: 2,
     lessonType: 'LESSON',
     student: 'Teszt Elek',
     teacher: 'Admin bá'
   },
   {
-    id: 5,
+    id: 1,
     lessonDate: '2019-11-26',
-    lessonStart: 3,
+    lessonStart: ,
     lessonType: 'LESSON',
     student: 'Lorem Ipsum',
     teacher: 'Admin bá'
