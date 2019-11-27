@@ -1,22 +1,3 @@
-<!--
-<table>
-  <colgroup>
-    <col class="col-group">
-  </colgroup>
-  <thead>
-    <tr>
-      <th *ngFor="let c of columns">{{ c }}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let lesson of lessons" 
-    app-table-row [lesson]="lessons" [columns]="columns">
-    </tr>
-  </tbody>
-</table>
--->
-------------
-
 <div class="table">
   <div class="table__header__top">
     <div class="table__header__top__cell" *ngFor="let col of columns">{{ col }}</div>

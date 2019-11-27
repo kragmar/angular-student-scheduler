@@ -67,7 +67,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: .em;
+  font-size: .7em;
 }
 
 .table__body__row__cell--col1 { grid-column: col1; }
