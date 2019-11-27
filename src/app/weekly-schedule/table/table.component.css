@@ -6,8 +6,9 @@
     ". header-top"
     "header-side body";
   padding: .5em;
-  margin: 1em;
+
   border: .1em solid #00f;
+  height: 100%;
 }
 
 .table__header__top {
