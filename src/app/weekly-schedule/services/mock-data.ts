@@ -18,7 +18,7 @@ export const LESSONS: Lesson[] = [
     teacher: 'Admin bá'
   },
   {
-    id: 3,
+    id: 1,
     lessonDate: '2019-11-26',
     lessonStart: 2,
     lessonType: 'LESSON',
