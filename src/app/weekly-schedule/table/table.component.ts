@@ -57,7 +57,6 @@ export class TableComponent implements OnInit {
       let dateString = this.calcDays(i).getFullYear() + '-' + (this.calcDays(i).getMonth()+1) + '-' + this.calcDays(i).getDate();
       let date = new Date(dateString);
       dates.push(date);
-      console.log("getDates() output: " + date);
     }
     return dates;
   }
