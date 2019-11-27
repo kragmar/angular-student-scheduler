@@ -36,7 +36,7 @@ export const LESSONS: Lesson[] = [
   {
     id: 1,
     lessonDate: '2019-11-26',
-    lessonStart: ,
+    lessonStart: 2,
     lessonType: 'LESSON',
     student: 'Lorem Ipsum',
     teacher: 'Admin bá'
