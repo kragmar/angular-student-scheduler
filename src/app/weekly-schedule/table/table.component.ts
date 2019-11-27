@@ -10,6 +10,7 @@ import { WeeklyService } from '../services/weekly.service';
 export class TableComponent implements OnInit {
 
   lessons: Lesson[];
+  selectedLessons: Lesson[];
   columns: string[];
 
   constructor(private weeklyService: WeeklyService) { }
@@ -54,20 +55,9 @@ export class TableComponent implements OnInit {
     }
   }
 
-  setRow(lesson: Lesson): string {
-    switch(lesson.lessonStart) {
-      case '1':
-        return "table__body__row__cell--row1";
-      case '2':
-        return "table__body__row__cell--row2";
-      case '3':
-        return "table__body__row__cell--row3";
-      case '4':
-        return "table__body__row__cell--row4";
-      case '5':
-        return "table__body__row__cell--row5";
-      default:
-        return "";
+  setRow(lesson: Lesson, column: number): void {
+    if(lesson.lessonStart == column) {
+      this.selectedLessons.push(lesson);
     }
   }
 
