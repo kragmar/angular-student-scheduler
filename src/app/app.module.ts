@@ -10,12 +10,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { TableComponent } from './weekly-schedule/table/table.component';
 import { WeeklyScheduleComponent } from './weekly-schedule/weekly-schedule.component';
 import { WeeklyService } from './weekly-schedule/services/weekly.service';
+import { DailyScheduleComponent } from './daily-schedule/daily-schedule.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
-    WeeklyScheduleComponent
+    WeeklyScheduleComponent,
+    DailyScheduleComponent
   ],
   imports: [
     BrowserModule,
