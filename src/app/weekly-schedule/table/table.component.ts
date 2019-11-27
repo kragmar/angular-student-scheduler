@@ -72,24 +72,24 @@ export class TableComponent implements OnInit {
   }
 
   setCol(lesson: Lesson): string {
-    switch(lesson.id) {
-      case 1:
+    switch(lesson.lessonStart) {
+      case '12:50':
         return " table__body__row__cell--col1";
-      case 2:
+      case '13:40':
         return " table__body__row__cell--col2";
-      case 3:
+      case '14:30':
         return " table__body__row__cell--col3";
-      case 4:
+      case '15:20':
         return " table__body__row__cell--col4";
-      case 5:
+      case '16:10':
         return " table__body__row__cell--col5";
-      case 6:
+      case '17:00':
         return " table__body__row__cell--col6";
-      case 7:
+      case '17:50':
         return " table__body__row__cell--col7";
-      case 8:
+      case '18:40':
         return " table__body__row__cell--col8";
-      case 9:
+      case '19:30':
         return " table__body__row__cell--col9";
       default:
         return "";

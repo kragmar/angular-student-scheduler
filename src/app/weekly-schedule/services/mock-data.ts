@@ -4,39 +4,39 @@ export const LESSONS: Lesson[] = [
   {
     id: 1,
     lessonDate: '2019-11-27',
-    lessonStart: 1,
+    lessonStart: '12:50',
     lessonType: 'LESSON',
     student: 'Teszt Elek',
     teacher: 'Admin bá'
   },
   {
-    id: 1,
+    id: 2,
     lessonDate: '2019-11-25',
-    lessonStart: 2,
+    lessonStart: '12:50',
     lessonType: 'LESSON',
     student: 'Lorem Ipsum',
     teacher: 'Admin bá'
   },
   {
-    id: 1,
+    id: 3,
     lessonDate: '2019-11-26',
-    lessonStart: 2,
+    lessonStart: '12:50',
     lessonType: 'LESSON',
     student: 'Lorem Ipsum',
     teacher: 'Admin bá'
   },
   {
-    id: 1,
+    id: 4,
     lessonDate: '2019-11-26',
-    lessonStart: 2,
+    lessonStart: '12:50',
     lessonType: 'LESSON',
     student: 'Teszt Elek',
     teacher: 'Admin bá'
   },
   {
-    id: 1,
+    id: 5,
     lessonDate: '2019-11-26',
-    lessonStart: 2,
+    lessonStart: '12:50',
     lessonType: 'LESSON',
     student: 'Lorem Ipsum',
     teacher: 'Admin bá'
@@ -44,7 +44,7 @@ export const LESSONS: Lesson[] = [
   {
     id: 6,
     lessonDate: '2019-11-26',
-    lessonStart: 3,
+    lessonStart: '14:30',
     lessonType: 'LESSON',
     student: 'Lorem Ipsum',
     teacher: 'Admin bá'
@@ -52,15 +52,15 @@ export const LESSONS: Lesson[] = [
   {
     id: 7,
     lessonDate: '2019-11-28',
-    lessonStart: 4,
+    lessonStart: '16:10',
     lessonType: 'LESSON',
     student: 'Teszt Elek',
     teacher: 'Admin bá'
   },
   {
     id: 8,
-    lessonDate: '2019-11-2',
-    lessonStart: 5,
+    lessonDate: '2019-11-29',
+    lessonStart: '19:30',
     lessonType: 'LESSON',
     student: 'Lorem Ipsum',
     teacher: 'Admin bá'
@@ -68,7 +68,7 @@ export const LESSONS: Lesson[] = [
   {
     id: 9,
     lessonDate: '2019-11-26',
-    lessonStart: 5,
+    lessonStart: '18:40',
     lessonType: 'LESSON',
     student: 'Lorem Ipsum',
     teacher: 'Admin bá'
