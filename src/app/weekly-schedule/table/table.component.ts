@@ -45,52 +45,62 @@ export class TableComponent implements OnInit {
   }
 
   getDays(): string[] {
+    let days = new Array<string>();
+    for(let i = 0; i < 5; i++) {
+      let day = this.months[this.calcDays(i).getMonth()] + ' ' + this.calcDays(i).getDate() + ' ' + this.days[i];
+      days.push(day);
+    }
+    return days;
+  }
+
+  getDates(): string[] {
     let dates = new Array<string>();
     for(let i = 0; i < 5; i++) {
-      let date = this.months[this.calcDays(i).getMonth()] + ' ' + this.calcDays(i).getDate() + ' ' + this.days[i];
+      let month = (this.calcDays(i).getMonth() + 1).toString();
+      let date = this.calcDays(i).getFullYear() + '-' + month + '-' + this.calcDays(i).getDate();
       dates.push(date);
     }
     return dates;
   }
 
   setActiveDay(row: string): string {
-    let date = this.months[this.today.getMonth()] + ' ' + this.today.getDate() + ' ' + this.days[this.today.getDay()];
+    let date = this.today.getFullYear() + '-' + this.today.getMonth() + '-' + this.today.getDate();
     if(row == date) {
-      return "table__body__row__cell--today";
+      return " table__body__row--today";
     }
-    return;
+    return "";
   }
 
   setCol(lesson: Lesson): string {
     switch(lesson.id) {
       case 1:
-        return "table__body__row__cell--col1";
+        return " table__body__row__cell--col1";
       case 2:
-        return "table__body__row__cell--col2";
+        return " table__body__row__cell--col2";
       case 3:
-        return "table__body__row__cell--col3";
+        return " table__body__row__cell--col3";
       case 4:
-        return "table__body__row__cell--col4";
+        return " table__body__row__cell--col4";
       case 5:
-        return "table__body__row__cell--col5";
+        return " table__body__row__cell--col5";
       case 6:
-        return "table__body__row__cell--col6";
+        return " table__body__row__cell--col6";
       case 7:
-        return "table__body__row__cell--col7";
+        return " table__body__row__cell--col7";
       case 8:
-        return "table__body__row__cell--col8";
+        return " table__body__row__cell--col8";
       case 9:
-        return "table__body__row__cell--col9";
+        return " table__body__row__cell--col9";
       default:
         return "";
     }
   }
 
-  setRow(lesson: Lesson, row: string): Lesson[] {
-    if(lesson.lessonDate == row) {
-      return new Array<Lesson>(lesson);
+  setRow(lesson: Lesson, date: string): Lesson[] {
+    if(lesson.lessonDate == date) {
+      return lesson;
     }
-    return new Array<Lesson>();
+    return;
   }
 
 }
