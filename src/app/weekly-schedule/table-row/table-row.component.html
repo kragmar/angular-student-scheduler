@@ -1,5 +1,31 @@
-<td *ngFor="let col of columns; last as isLast">
-  <div *ngFor="let l of lesson">
-    {{ l.student }}
-  </div>
-</td>
+<ng-container class="table__body__row__cell" *ngFor="let lesson of lessons">
+  <ng-container [ngSwitch]="lesson?.id">
+    <div *ngSwitchCase="1" [className]="'table__body__row__cell table__body__row__cell--col1'">
+      {{ lesson.student }}
+    </div>
+    <div *ngSwitchCase="2" [className]="'table__body__row__cell table__body__row__cell--col2'">
+      {{ lesson.student }}
+    </div>
+    <div *ngSwitchCase="3" [className]="'table__body__row__cell table__body__row__cell--col3'">
+      {{ lesson.student }}
+    </div>
+    <div *ngSwitchCase="4" [className]="'table__body__row__cell table__body__row__cell--col4'">
+      {{ lesson.student }}
+    </div>
+    <div *ngSwitchCase="5" [className]="'table__body__row__cell table__body__row__cell--col5'">
+      {{ lesson.student }}
+    </div>
+    <div *ngSwitchCase="6" [className]="'table__body__row__cell table__body__row__cell--col6'">
+      {{ lesson.student }}
+    </div>
+    <div *ngSwitchCase="7" [className]="'table__body__row__cell table__body__row__cell--col7'">
+      {{ lesson.student }}
+    </div>
+    <div *ngSwitchCase="8" [className]="'table__body__row__cell table__body__row__cell--col8'">
+      {{ lesson.student }}
+    </div>
+    <div *ngSwitchCase="9" [className]="'table__body__row__cell table__body__row__cell--col9'">
+      {{ lesson.student }}
+    </div>
+  </ng-container>
+</ng-container>

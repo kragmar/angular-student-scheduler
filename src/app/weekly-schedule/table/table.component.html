@@ -25,38 +25,9 @@
     <div class="table__header__side__cell" *ngFor="let col of [1,2,3,4,5]">{{ col }}</div>
   </div>
   <div class="table__body">
-    <div class="table__body__row" *ngFor="let col of [1,2,3,4,5]">
-      <ng-container class="table__body__row__cell" *ngFor="let lesson of lessons">
-        <ng-container [ngSwitch]="lesson?.id">
-          <div *ngSwitchCase="1" [className]="'table__body__row__cell table__body__row__cell--col1'">
-            {{ lesson.student }}
-          </div>
-          <div *ngSwitchCase="2" [className]="'table__body__row__cell table__body__row__cell--col2'">
-            {{ lesson.student }}
-          </div>
-          <div *ngSwitchCase="3" [className]="'table__body__row__cell table__body__row__cell--col3'">
-            {{ lesson.student }}
-          </div>
-          <div *ngSwitchCase="4" [className]="'table__body__row__cell table__body__row__cell--col4'">
-            {{ lesson.student }}
-          </div>
-          <div *ngSwitchCase="5" [className]="'table__body__row__cell table__body__row__cell--col5'">
-            {{ lesson.student }}
-          </div>
-          <div *ngSwitchCase="6" [className]="'table__body__row__cell table__body__row__cell--col6'">
-            {{ lesson.student }}
-          </div>
-          <div *ngSwitchCase="7" [className]="'table__body__row__cell table__body__row__cell--col7'">
-            {{ lesson.student }}
-          </div>
-          <div *ngSwitchCase="8" [className]="'table__body__row__cell table__body__row__cell--col8'">
-            {{ lesson.student }}
-          </div>
-          <div *ngSwitchCase="9" [className]="'table__body__row__cell table__body__row__cell--col9'">
-            {{ lesson.student }}
-          </div>
-        </ng-container>
-      </ng-container>
+    <div class="table__body__row" *ngFor="let col of [1,2,3,4,5]" 
+    app-table-row [lessons]="lessons" [columns]="columns">
+      <!-- table-row component -->
     </div>
   </div>
 </div>

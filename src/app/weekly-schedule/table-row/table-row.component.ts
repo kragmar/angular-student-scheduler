@@ -8,7 +8,7 @@ import { Lesson } from '../services/lesson';
 })
 export class TableRowComponent implements OnInit {
 
-  @Input() lesson: Lesson;
+  @Input() lessons: Lesson[];
   @Input() columns: string[];
 
   constructor() { }
