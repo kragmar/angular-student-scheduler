@@ -14,6 +14,8 @@ export class TableComponent implements OnInit {
   rows: Date[];
 
   today = new Date();
+  currentMonth = this.today.getMonth();
+  currentYear = this.today.getFullYear();
   days = ['Hétfő', 'Kedd', 'Szerda', 'Csütörtök', 'Péntek', 'Szombat', 'Vasárnap'];
   months = ['Jan', 'Feb', 'Már', 'Ápr', 'Máj', 'Jún', 'Júl', 'Aug', 'Szept', 'Okt', 'Nov', 'Dec'];
 
@@ -34,8 +36,14 @@ export class TableComponent implements OnInit {
       .subscribe(columns => this.columns = columns);
   }
 
-  getRows(): void {
+  calcDays(index: number): void {
     
+  }
+
+  getDays(): void {
+    for(let i = 0; i < 5; i++) {
+      
+    }
   }
 
   setCol(lesson: Lesson): string {
