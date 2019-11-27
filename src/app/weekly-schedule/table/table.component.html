@@ -3,8 +3,7 @@
     <div class="table__header__top__cell" *ngFor="let col of columns">{{ col }}</div>
   </div>
   <div class="table__header__side">
-    {{ today }}
-    <div class="table__header__side__cell" *ngFor="let row of [1,2,3,4,5]">{{ row }}</div>
+    <div class="table__header__side__cell" *ngFor="let row of getDays()">{{ row }}</div>
   </div>
   <div class="table__body">
     <div class="table__body__row" *ngFor="let row of [1,2,3,4,5]">

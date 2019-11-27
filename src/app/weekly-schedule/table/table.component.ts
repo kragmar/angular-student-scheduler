@@ -11,7 +11,8 @@ export class TableComponent implements OnInit {
 
   lessons: Lesson[];
   columns: string[];
-  rows: string[];
+
+  rows = new Array<string>();
 
   today = new Date();
   dayIterator = this.today;
@@ -43,11 +44,13 @@ export class TableComponent implements OnInit {
     return this.dayIterator;
   }
 
-  getDays(): void {
+  getDays(): string[] {
+    let dates = new Array<string>();
     for(let i = 0; i < 5; i++) {
       let date = this.months[this.calcDays(i).getMonth()] + ' ' + this.calcDays(i).getDate() + ' ' + this.days[i];
-      this.rows.push(date);
+      dates.push(date);
     }
+    return dates;
   }
 
   setCol(lesson: Lesson): string {
