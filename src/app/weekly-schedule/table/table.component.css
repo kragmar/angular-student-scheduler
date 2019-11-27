@@ -6,7 +6,6 @@
     ". header-top"
     "header-side body";
   padding: .5em;
-
   border: .1em solid #00f;
   height: 100%;
 }
