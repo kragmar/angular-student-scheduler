@@ -11,8 +11,6 @@ import { LessonsComponent } from './lessons/lessons.component';
 import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
 import { LessonService } from './lesson.service';
 import { TableComponent } from './weekly-schedule/table/table.component';
-import { TableRowComponent } from './weekly-schedule/table-row/table-row.component';
-import { TableCellComponent } from './weekly-schedule/table-cell/table-cell.component';
 import { WeeklyScheduleComponent } from './weekly-schedule/weekly-schedule.component';
 import { WeeklyService } from './weekly-schedule/services/weekly.service';
 
@@ -22,8 +20,6 @@ import { WeeklyService } from './weekly-schedule/services/weekly.service';
     LessonsComponent,
     LessonDetailComponent,
     TableComponent,
-    TableRowComponent,
-    TableCellComponent,
     WeeklyScheduleComponent
   ],
   imports: [
