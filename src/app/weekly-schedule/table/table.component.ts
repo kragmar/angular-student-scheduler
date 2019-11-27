@@ -11,9 +11,10 @@ export class TableComponent implements OnInit {
 
   lessons: Lesson[];
   columns: string[];
-  rows: Date[];
+  rows: string[];
 
   today = new Date();
+  dayIterator = this.today;
   currentMonth = this.today.getMonth();
   currentYear = this.today.getFullYear();
   days = ['Hétfő', 'Kedd', 'Szerda', 'Csütörtök', 'Péntek', 'Szombat', 'Vasárnap'];
@@ -36,13 +37,16 @@ export class TableComponent implements OnInit {
       .subscribe(columns => this.columns = columns);
   }
 
-  calcDays(index: number): void {
-    
+  calcDays(index: number): Date {
+    let diff = (this.dayIterator.getDay() - 1) - index;
+    this.dayIterator.setDate(this.dayIterator.getDate() - diff);
+    return this.dayIterator;
   }
 
   getDays(): void {
     for(let i = 0; i < 5; i++) {
-      
+      let date = this.months[this.calcDays(i).getMonth()] + ' ' + this.calcDays(i).getDate() + ' ' + this.days[i];
+      this.rows.push(date);
     }
   }
 
