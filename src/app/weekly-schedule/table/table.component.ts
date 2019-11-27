@@ -10,8 +10,12 @@ import { WeeklyService } from '../services/weekly.service';
 export class TableComponent implements OnInit {
 
   lessons: Lesson[];
-  selectedLessons: Lesson[];
   columns: string[];
+  rows: Date[];
+
+  today = new Date();
+  days = ['Hétfő', 'Kedd', 'Szerda', 'Csütörtök', 'Péntek', 'Szombat', 'Vasárnap'];
+  months = ['Jan', 'Feb', 'Már', 'Ápr', 'Máj', 'Jún', 'Júl', 'Aug', 'Szept', 'Okt', 'Nov', 'Dec'];
 
   constructor(private weeklyService: WeeklyService) { }
 
@@ -28,6 +32,10 @@ export class TableComponent implements OnInit {
   getColumns(): void {
     this.weeklyService.getColumns()
       .subscribe(columns => this.columns = columns);
+  }
+
+  getRows(): void {
+    
   }
 
   setCol(lesson: Lesson): string {
