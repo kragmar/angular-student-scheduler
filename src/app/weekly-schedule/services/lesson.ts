@@ -1,6 +1,6 @@
 export class Lesson {
   id: number;
-  lessonDate: Da;
+  lessonDate: Date;
   lessonStart: number;
   lessonType: string;
   student: string;
