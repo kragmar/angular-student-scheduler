@@ -55,10 +55,11 @@ export class TableComponent implements OnInit {
     }
   }
 
-  setRow(lesson: Lesson, column: number): void {
-    if(lesson.lessonStart == column) {
-      this.selectedLessons.push(lesson);
+  setRow(lesson: Lesson, row: number): Lesson[] {
+    if(lesson.lessonStart == row) {
+      return new Array<Lesson>(lesson);
     }
+    return new Array<Lesson>();
   }
 
 }

@@ -27,12 +27,10 @@
   <div class="table__body">
     <div class="table__body__row" *ngFor="let col of [1,2,3,4,5]">
       <ng-container *ngFor="let lesson of lessons">
-        <ng-container *ngIf="setRow(lesson, col)">
-          <ng-container *ngFor="let l of selectedLessons">
-            <div [className]="'table__body__row__cell ' + setCol(l) + ' ' + setRow(lesson)">
-              {{ l.student }}
-            </div>
-          </ng-container>
+        <ng-container *ngFor="let l of setRow(lesson, col)">
+          <div [className]="'table__body__row__cell ' + setCol(l) + ' ' + setRow(lesson)">
+            {{ l.student }}
+          </div>
         </ng-container>
       </ng-container>
     </div>
