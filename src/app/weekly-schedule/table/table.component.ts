@@ -53,6 +53,14 @@ export class TableComponent implements OnInit {
     return dates;
   }
 
+  setActiveDay(row: string): string {
+    let date = this.months[this.today.getMonth()] + ' ' + this.today.getDate() + ' ' + this.days[this.today.getDay()];
+    if(row == date) {
+      return "table__body__row__cell--today";
+    }
+    return;
+  }
+
   setCol(lesson: Lesson): string {
     switch(lesson.id) {
       case 1:
@@ -78,8 +86,8 @@ export class TableComponent implements OnInit {
     }
   }
 
-  setRow(lesson: Lesson, row: number): Lesson[] {
-    if(lesson.lessonStart == row) {
+  setRow(lesson: Lesson, row: string): Lesson[] {
+    if(lesson.lessonDate == row) {
       return new Array<Lesson>(lesson);
     }
     return new Array<Lesson>();
