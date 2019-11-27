@@ -7,9 +7,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HttpClientModule } from '@angular/common/http';
-import { LessonsComponent } from './lessons/lessons.component';
-import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
-import { LessonService } from './lesson.service';
 import { TableComponent } from './weekly-schedule/table/table.component';
 import { WeeklyScheduleComponent } from './weekly-schedule/weekly-schedule.component';
 import { WeeklyService } from './weekly-schedule/services/weekly.service';
@@ -17,8 +14,6 @@ import { WeeklyService } from './weekly-schedule/services/weekly.service';
 @NgModule({
   declarations: [
     AppComponent,
-    LessonsComponent,
-    LessonDetailComponent,
     TableComponent,
     WeeklyScheduleComponent
   ],
@@ -29,7 +24,7 @@ import { WeeklyService } from './weekly-schedule/services/weekly.service';
     BrowserAnimationsModule,
     HttpClientModule,
   ],
-  providers: [LessonService, WeeklyService],
+  providers: [WeeklyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
