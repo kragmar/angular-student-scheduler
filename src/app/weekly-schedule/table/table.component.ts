@@ -12,8 +12,6 @@ export class TableComponent implements OnInit {
   lessons: Lesson[];
   columns: string[];
 
-  rows = new Array<string>();
-
   today = new Date();
   dayIterator = this.today;
   currentMonth = this.today.getMonth();
@@ -56,16 +54,18 @@ export class TableComponent implements OnInit {
   getDates(): Date[] {
     let dates = new Array<Date>();
     for(let i = 0; i < 5; i++) {
-      let dateString = this.calcDays(i).getFullYear() + '-' + this.calcDays(i).getMonth() + '-' + this.calcDays(i).getDate();
+      let dateString = this.calcDays(i).getFullYear() + '-' + (this.calcDays(i).getMonth()+1) + '-' + this.calcDays(i).getDate();
       let date = new Date(dateString);
       dates.push(date);
+      console.log("getDates() output: " + date);
     }
     return dates;
   }
 
-  setActiveDay(row: string): string {
-    let date = this.today.getFullYear() + '-' + this.today.getMonth() + '-' + this.today.getDate();
-    if(row == date) {
+  setActiveDay(row: Date): string {
+    let dateString = this.today.getFullYear() + '-' + (this.today.getMonth()+1) + '-' + this.today.getDate();
+    let date = new Date(dateString);
+    if(row === date) {
       return " table__body__row--today";
     }
     return "";
@@ -96,11 +96,13 @@ export class TableComponent implements OnInit {
     }
   }
 
-  setRow(lesson: Lesson, date: string): Lesson[] {
-    if(lesson.lessonDate == date) {
-      return lesson;
+  setRow(lesson: Lesson, date: Date): Lesson[] {
+    let lessonDate = new Date(lesson.lessonDate);
+    if(lessonDate.getTime() == date.getTime()) {
+
+      return new Array<Lesson>(lesson);
     }
-    return;
+    return ;
   }
 
 }

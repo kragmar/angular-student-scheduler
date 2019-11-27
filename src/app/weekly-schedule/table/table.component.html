@@ -6,10 +6,9 @@
     <div class="table__header__side__cell" *ngFor="let row of getDays()">{{ row }}</div>
   </div>
   <div class="table__body">
-    <div [className]="'table__body__row' + setActiveDay(row)" *ngFor="let row of getDates()">
-      {{row}}
+    <div [className]="'table__body__row' + setActiveDay(date)" *ngFor="let date of getDates()">
       <ng-container *ngFor="let lesson of lessons">
-        <ng-container *ngFor="let lssn of setRow(lesson, row)">
+        <ng-container *ngFor="let lssn of setRow(lesson, date)">
           <div [className]="'table__body__row__cell' + setCol(lssn)">
             {{ lssn.student }}
           </div>
