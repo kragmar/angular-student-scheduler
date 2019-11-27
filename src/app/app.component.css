@@ -10,4 +10,5 @@
 
 .grid-layout__weekly-schedule {
   grid-area: weekly;
+  padding: 1em;
 }
