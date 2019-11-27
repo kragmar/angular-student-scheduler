@@ -22,10 +22,10 @@
     <div class="table__header__top__cell" *ngFor="let col of columns">{{ col }}</div>
   </div>
   <div class="table__header__side">
-    <div class="table__header__side__cell" *ngFor="let col of columns">{{ col }}</div>
+    <div class="table__header__side__cell" *ngFor="let col of [1,2,3,4,5]">{{ col }}</div>
   </div>
   <div class="table__body">
-    <div class="table__body__row" *ngFor="let col of columns">
+    <div class="table__body__row" *ngFor="let col of [1,2,3,4,5]">
       <ng-container class="table__body__row__cell" *ngFor="let lesson of lessons">
         <ng-container [ngSwitch]="lesson?.id">
           <div *ngSwitchCase="1" [className]="'table__body__row__cell table__body__row__cell--col1'">
