@@ -1,0 +1,13 @@
+.grid-layout {
+  display: grid;
+  grid-template-columns: .4fr .6fr 1fr;
+  grid-template-rows: .6fr auto;
+  grid-template-areas: 
+    "msg daily weekly"
+    "info daily weekly";
+  height: 100vh;
+}
+
+.grid-layout__weekly-schedule {
+  grid-area: weekly;
+}
