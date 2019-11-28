@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MatDatepickerModule } from '@angular/material';
+import { MatNativeDateModule } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,8 +25,10 @@ import { WeeklyService } from './weekly-schedule/services/weekly.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [WeeklyService],
+  providers: [WeeklyService, MatDatepickerModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

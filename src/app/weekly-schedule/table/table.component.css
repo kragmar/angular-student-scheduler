@@ -1,20 +1,21 @@
 .table {
   display: grid;
-  grid-template-columns: .1fr .9fr;
-  grid-template-rows: .1fr auto;
+  grid-template-columns: .1fr auto;
+  grid-template-rows: .1fr .1fr auto;
   grid-template-areas: 
+    "nav nav"
     ". header-top"
     "header-side body";
   padding: .5em;
   border: .1em solid #00f;
   height: 100%;
-  min-height: 75%; /* change for responsivity with smaller screens */
+  min-height: 75vh; /* change for responsivity with smaller screens */
 }
 
 .table__header__top {
   grid-area: header-top;
   display: flex;
-  border: .1em solid #000;
+  /*border: .1em solid #000;*/
 }
 
 .table__header__top__cell {
@@ -27,7 +28,7 @@
   grid-area: header-side;
   display: flex;
   flex-direction: column;
-  border: .1em solid #000;
+  /*border: .1em solid #000;*/
 }
 
 .table__header__side__cell {
