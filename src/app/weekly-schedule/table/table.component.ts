@@ -13,7 +13,7 @@ export class TableComponent implements OnInit {
   columns: string[];
 
   today = new Date();
-  dayIterator = this.today;
+  dayIterator = new Date();
   currentMonth = this.today.getMonth();
   currentYear = this.today.getFullYear();
   days = ['Hétfő', 'Kedd', 'Szerda', 'Csütörtök', 'Péntek', 'Szombat', 'Vasárnap'];
@@ -60,6 +60,27 @@ export class TableComponent implements OnInit {
       dates.push(date);
     }
     return dates;
+  }
+
+  goToPrevWeek(): void {
+    this.dayIterator.setDate(this.dayIterator.getDate() - 7);
+    this.currentMonth = this.dayIterator.getMonth();
+    this.currentYear = this.dayIterator.getFullYear();
+  }
+
+  goToToday(): void {
+    this.dayIterator.setDate(this.today.getDate());
+    this.currentMonth = this.today.getMonth();
+    this.currentYear = this.today.getFullYear();
+    this.dayIterator.setMonth(this.currentMonth);
+    this.dayIterator.setFullYear(this.currentYear);
+
+  }
+
+  goToNextWeek(): void {
+    this.dayIterator.setDate(this.dayIterator.getDate() + 7);
+    this.currentMonth = this.dayIterator.getMonth();
+    this.currentYear = this.dayIterator.getFullYear();
   }
 
   setActiveDay(row: Date): string {
