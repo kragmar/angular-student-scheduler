@@ -74,7 +74,6 @@ export class TableComponent implements OnInit {
     this.currentYear = this.today.getFullYear();
     this.dayIterator.setMonth(this.currentMonth);
     this.dayIterator.setFullYear(this.currentYear);
-
   }
 
   goToNextWeek(): void {
