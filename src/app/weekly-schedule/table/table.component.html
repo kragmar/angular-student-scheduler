@@ -1,13 +1,13 @@
 <div class="table">
   <div class="table__nav">
     <div class="table__nav__previous">
-      <button>Előző</button>
+      <button (click)="goToPrevWeek()">Előző</button>
     </div>
     <div class="table__nav__today">
-      <button>Ma</button>
+      <button (click)="goToToday()">Ma</button>
     </div>
     <div class="table__nav__next">
-      <button>Következő</button>
+      <button (click)="goToNextWeek()">Következő</button>
     </div>
     <div class="table__nav__date">
       <div class="table__nav__date__year">{{ currentYear }}</div>
