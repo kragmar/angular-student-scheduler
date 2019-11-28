@@ -18,6 +18,16 @@
   align-items: center;
 }
 
+.table__nav__date {
+  display: flex;
+  margin-left: 35%;
+  margin-right: auto;
+}
+
+.table__nav__date__year {
+  margin-right: 1em;
+}
+
 .table__header__top {
   grid-area: header-top;
   display: flex;
