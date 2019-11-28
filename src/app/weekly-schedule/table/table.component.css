@@ -12,6 +12,12 @@
   min-height: 75vh; /* change for responsivity with smaller screens */
 }
 
+.table__nav {
+  grid-area: nav;
+  display: flex;
+  align-items: center;
+}
+
 .table__header__top {
   grid-area: header-top;
   display: flex;
