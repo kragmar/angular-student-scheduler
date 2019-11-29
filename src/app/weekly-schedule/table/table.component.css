@@ -20,8 +20,9 @@
 
 .table__nav__date {
   display: flex;
-  margin-left: 35%;
+  margin-left: auto;
   margin-right: auto;
+  font-size: 1.25rem;
 }
 
 .table__nav__date__year {
