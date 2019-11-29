@@ -20,11 +20,14 @@ export class TableComponent implements OnInit {
   months = ['Jan', 'Feb', 'Már', 'Ápr', 'Máj', 'Jún', 'Júl', 'Aug', 'Szept', 'Okt', 'Nov', 'Dec'];
   monthsLong = ['Január', 'Február', 'Március', 'Április', 'Május', 'Június', 'Július', 'Augusztus', 'Szeptember', 'Október', 'November', 'December'];
 
+  datepickerDate: Dat;
+
   constructor(private weeklyService: WeeklyService) { }
 
   ngOnInit() {
     this.getLessons();
     this.getColumns();
+    this.datepickerDate = new Date();
   }
 
   getLessons(): void {
@@ -74,6 +77,7 @@ export class TableComponent implements OnInit {
     this.currentYear = this.today.getFullYear();
     this.dayIterator.setMonth(this.currentMonth);
     this.dayIterator.setFullYear(this.currentYear);
+    console.log(this.datepickerDate);
   }
 
   goToNextWeek(): void {

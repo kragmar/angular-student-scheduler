@@ -15,7 +15,7 @@
     </div>
   </div>
   <div class="table__datepicker">
-    <input [matDatepicker]="picker" type="hidden">
+    <input [matDatepicker]="picker" type="hidden" [(ngModel)]="datepickerDate">
     <mat-datepicker #picker></mat-datepicker>
     <mat-datepicker-toggle [for]="picker"></mat-datepicker-toggle>
   </div>
