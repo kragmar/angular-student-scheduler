@@ -27,7 +27,7 @@ export class TableComponent implements OnInit {
   ngOnInit() {
     this.getLessons();
     this.getColumns();
-    this.datepickerDate = new Date()
+    this.datepickerDate = new Date();
   }
 
   getLessons(): void {
@@ -77,7 +77,7 @@ export class TableComponent implements OnInit {
     this.currentYear = this.today.getFullYear();
     this.dayIterator.setMonth(this.currentMonth);
     this.dayIterator.setFullYear(this.currentYear);
-    console.log(this.datepickerDate);
+
   }
 
   goToNextWeek(): void {
