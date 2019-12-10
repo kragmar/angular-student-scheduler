@@ -9,10 +9,10 @@
     <div class="table__nav__next">
       <button (click)="goToNextWeek()">Következő</button>
     </div>
-    <div class="table__nav__date">
-      <div class="table__nav__date__year">{{ currentYear }}</div>
-      <div class="table__nav__date__month">{{ monthsLong[currentMonth] }}</div>
-    </div>
+  </div>
+  <div class="table__date">
+    <div class="table__nav__date__year">{{ currentYear }}</div>
+    <div class="table__nav__date__month">{{ monthsLong[currentMonth] }}</div>
   </div>
   <div class="table__datepicker">
     <input [matDatepicker]="picker" type="hidden" [(ngModel)]="datepickerDate">

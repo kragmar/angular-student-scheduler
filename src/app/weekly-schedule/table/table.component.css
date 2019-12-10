@@ -1,8 +1,9 @@
 .table {
   display: grid;
   grid-template-columns: .1fr auto;
-  grid-template-rows: .1fr .07fr 1fr;
+  grid-template-rows: .05fr .05fr .07fr 1fr;
   grid-template-areas: 
+    "date date"
     "nav nav"
     ". header-top"
     "header-side body";
@@ -18,7 +19,8 @@
   align-items: center;
 }
 
-.table__nav__date {
+.table__date {
+  grid-area: date;
   display: flex;
   margin-left: auto;
   margin-right: auto;
