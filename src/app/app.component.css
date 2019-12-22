@@ -13,3 +13,8 @@
   grid-area: weekly;
   padding: 1em;
 }
+
+.grid-layout__daily-schedule {
+  grid-area: daily;
+  padding: 1em;
+}

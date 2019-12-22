@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Lesson } from '../services/lesson';
-import { WeeklyService } from '../services/weekly.service';
+import { Lesson } from '../../services/lesson';
+import { DbService } from '../../services/db.service';
+import { Student } from 'src/app/services/student';
 
 @Component({
   selector: 'app-table',
@@ -10,7 +11,10 @@ import { WeeklyService } from '../services/weekly.service';
 export class TableComponent implements OnInit {
 
   lessons: Lesson[];
+  students: Student[];
   columns: string[];
+
+  lesson: Lesson[];
 
   today = new Date();
   dayIterator = new Date();
@@ -22,21 +26,27 @@ export class TableComponent implements OnInit {
 
   datepickerDate: Date;
 
-  constructor(private weeklyService: WeeklyService) { }
+  constructor(private dbService: DbService) { }
 
   ngOnInit() {
     this.getLessons();
+    this.getStudents();
     this.getColumns();
     this.datepickerDate = new Date();
   }
 
   getLessons(): void {
-    this.weeklyService.getLessons()
+    this.dbService.getLessons()
       .subscribe(lessons => this.lessons = lessons);
   }
 
+  getStudents(): void {
+    this.dbService.getStudents()
+      .subscribe(students => this.students = students);
+  }
+
   getColumns(): void {
-    this.weeklyService.getColumns()
+    this.dbService.getColumns()
       .subscribe(columns => this.columns = columns);
   }
 
@@ -127,5 +137,11 @@ export class TableComponent implements OnInit {
     }
     return ;
   }
+
+  // WIP POST
+  /* addLesson(): void {
+    this.weeklyService.addLesson(this.lesson)
+      .subscribe( lesson => this.lesson = lesson);
+  } */
 
 }

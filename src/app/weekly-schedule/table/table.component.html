@@ -9,10 +9,10 @@
     <div class="table__nav__next">
       <button (click)="goToNextWeek()">Következő</button>
     </div>
-  </div>
-  <div class="table__date">
-    <div class="table__nav__date__year">{{ currentYear }}</div>
-    <div class="table__nav__date__month">{{ monthsLong[currentMonth] }}</div>
+    <div class="table__nav__date">
+      <div class="table__nav__date__year">{{ currentYear }}</div>
+      <div class="table__nav__date__month">{{ monthsLong[currentMonth] }}</div>
+    </div>
   </div>
   <div class="table__datepicker">
     <input [matDatepicker]="picker" type="hidden" [(ngModel)]="datepickerDate">
@@ -30,7 +30,7 @@
       <ng-container *ngFor="let lesson of lessons">
         <ng-container *ngFor="let lssn of setRow(lesson, date)">
           <div [className]="'table__body__row__cell' + setCol(lssn)">
-            {{ lssn.student }}
+            {{ lssn.student.name }}
           </div>
         </ng-container>
       </ng-container>

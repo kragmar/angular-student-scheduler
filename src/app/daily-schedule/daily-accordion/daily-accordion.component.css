@@ -1,0 +1,54 @@
+.accordion {
+    display: grid;
+    grid-template-areas: 
+        "header"
+        ".";
+    padding: .5em;
+    /* border: .1em solid blue; */
+    border-radius: .5em;
+    box-shadow: 0 .25em 1em 0 #ccc;
+    height: 100%;
+}
+
+.accordion__header {
+    grid-area: header;
+}
+
+.mat-accordion {
+    overflow-y: auto;
+    height: 100%;
+}
+
+.mat-expansion-panel-header {
+    /* border: .1em solid red; */
+    border-radius: .5em;
+    background: rgb(181, 188, 255);
+    margin: .1em 0;
+}
+
+.mat-expansion-panel-header:hover {
+    background: rgb(86, 39, 255);
+}
+
+.mat-expansion-panel-header:active {
+    background: rgb(86, 39, 255);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+thead th {
+    /* border: .1em solid blue; */
+    border-radius: .5em;
+    box-shadow: 0 .1em .3em 0 #ccc;
+    background: rgb(181, 188, 255);
+}
+
+tbody td {
+    /* border-right: .1em solid black; */
+    border-radius: .5em;
+    box-shadow: 0 .1em .3em 0 #ccc;
+    padding: .5em;
+}

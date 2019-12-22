@@ -1,0 +1,57 @@
+nav {
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    background: rgb(124, 137, 255);
+    transition: .3s ease;
+    width: 4em;
+}
+
+.nav-bg {
+    width: 0;
+    height: 100%;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: background-color .3s ease-in;
+}
+
+nav:hover ~ .nav-bg {
+    width: 100%;
+    background-color: #0008;
+}
+
+nav:hover {
+    width: 15em;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    padding: 1em;
+    color: #fff;
+    background: rgb(181, 188, 255);
+}
+
+.nav-logout {
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+nav a:hover {
+    background: rgb(86, 39, 255);
+}

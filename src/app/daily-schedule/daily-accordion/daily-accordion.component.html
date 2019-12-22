@@ -1,0 +1,64 @@
+<!-- <form>
+    <label for="date">Lesson Date</label>
+    <input type="text" name="date" id="date" [(ngModel)]="lessonDate">
+    <label for="start">Lesson Start</label>
+    <input type="text" name="start" id="start" [(ngModel)]="lessonStart">
+    <label for="type">Lesson Type</label>
+    <input type="text" name="type" id="type" [(ngModel)]="lessonType">
+    <select (change)="getSelected($event)">
+        <option *ngFor="let student of students" [ngValue]="student">{{student}}</option>
+    </select>
+    <button (click)="addLesson()">Mentés</button>
+</form> -->
+
+<div class="accordion">
+    <mat-accordion class="accordion__body" [multi]="true">
+        <mat-expansion-panel [className]="'accordion__body__elem elem--' + i"
+            *ngFor="let column of columns">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{ column }}
+                </mat-panel-title>
+                <!-- <mat-panel-description>
+                    Órák száma: 
+                </mat-panel-description> -->
+            </mat-expansion-panel-header>
+            <table>
+                <colgroup>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Név</th>
+                        <th>Óra típusa</th>
+                        <th>Bérlet típus</th>
+                        <th>Egyéb</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngFor="let lesson of lessons">
+                        <ng-container *ngFor="let lssn of getTodaysLessons(lesson)">
+                            <tr *ngFor="let l of getRows(lssn, column)">
+                                <td>
+                                    {{ l.student.name }}
+                                </td>
+                                <td>
+                                    {{ l.lessonType }}
+                                </td>
+                                <td>
+                                    TBD
+                                </td>
+                                <td>
+                                    TBD
+                                </td>
+                            </tr>
+                        </ng-container>
+                    </ng-container>
+                </tbody>
+            </table>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
