@@ -5,16 +5,15 @@
   grid-template-areas: 
     "msg daily weekly"
     "info daily weekly";
-  grid-gap: 1rem;
+  grid-gap: 1em;
+  padding: 1em;
   height: 100vh;
 }
 
 .grid-layout__weekly-schedule {
   grid-area: weekly;
-  padding: 1em;
 }
 
 .grid-layout__daily-schedule {
   grid-area: daily;
-  padding: 1em;
 }
