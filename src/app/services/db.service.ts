@@ -8,7 +8,6 @@ import { Lesson } from './lesson';
 import { Student } from './student';
 import { LessonPost } from './lesson-post';
 import { Teacher } from './teacher';
-/* import { LESSONS } from './mock-data'; */
 
 @Injectable({
   providedIn: 'root'
