@@ -1,19 +1,4 @@
-.grid-layout {
-  display: grid;
-  grid-template-columns: .4fr .6fr 1fr;
-  grid-template-rows: .6fr 1fr;
-  grid-template-areas: 
-    "msg daily weekly"
-    "info daily weekly";
-  grid-gap: 1em;
-  padding: 1em;
-  height: 100vh;
-}
-
-.grid-layout__weekly-schedule {
-  grid-area: weekly;
-}
-
-.grid-layout__daily-schedule {
-  grid-area: daily;
+.layout {
+  width: 100%;
+  height: 100%;
 }

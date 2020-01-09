@@ -18,6 +18,9 @@ import { DbService } from './services/db.service';
 import { DailyScheduleComponent } from './daily-schedule/daily-schedule.component';
 import { DailyAccordionComponent } from './daily-schedule/daily-accordion/daily-accordion.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { DailyInfoComponent } from './daily-info/daily-info.component';
+import { StudentsComponent } from './students/students.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { NavbarComponent } from './navbar/navbar.component';
     WeeklyScheduleComponent,
     DailyScheduleComponent,
     DailyAccordionComponent,
-    NavbarComponent
+    NavbarComponent,
+    DailyInfoComponent,
+    StudentsComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
