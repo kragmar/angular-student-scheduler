@@ -1,3 +1,25 @@
-<p>
-  Students Works!
-</p>
+<div class="student-layout">
+    <mat-form-field class="student-layout__form">
+        <mat-label>Tanuló neve</mat-label>
+        <mat-select [(value)]="selected">
+            <mat-option *ngFor="let student of students" [value]="student">{{ student.name }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <ng-container *ngIf="selected">
+        <form #form="ngForm" class="student-layout__result">
+            <mat-form-field>
+                <input matInput placeholder="Név" [value]="selected.name" [(ngModel)]="selected.name" name="name">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Email" [value]="selected.email">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Telefonszám" [value]="selected.telNum">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Születési dátum" [value]="selected.birthDate">
+            </mat-form-field>
+            <button class="result-btn" type="submit" (click)="save()" mat-button>Mentés</button> 
+        </form>
+    </ng-container>
+</div>

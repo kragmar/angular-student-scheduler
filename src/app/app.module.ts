@@ -1,11 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatDatepickerModule, MatInputModule } from '@angular/material';
-import { MatNativeDateModule } from '@angular/material';
-import { MatExpansionModule } from '@angular/material';
-import { MatSelectModule } from '@angular/material/select';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { 
+  MatDatepickerModule,
+  MatInputModule,
+  MatNativeDateModule,
+  MatExpansionModule,
+  MatSelectModule,
+  MatFormFieldModule } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

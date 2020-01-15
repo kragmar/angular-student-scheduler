@@ -1,0 +1,55 @@
+.student-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "search ."
+        "result .";
+    gap: 1em;
+    padding: 1em;
+    margin-left: 4em;
+}
+
+.student-layout__form {
+    border: .1em solid blue;
+    /* border-radius: .5em;
+    box-shadow: 0 .25em 1em 0 #ccc; */
+    padding: 2em;
+}
+
+.form-name {
+    display: grid;
+    grid-template-columns: 1fr .1fr;
+    grid-template-rows: 2em auto;
+    grid-template-areas: 
+        ". ."
+        "select btn";
+    gap: .25em;
+    flex-direction: column;
+}
+
+.form-select {
+    grid-area: select;
+    padding: .5em;
+}
+
+.form-btn-search {
+    grid-area: btn;
+    width: 100%;
+    margin-left: auto;
+    padding: .5em;
+    text-align: center;
+}
+
+.student-layout__result {
+    grid-area: result;
+    display: flex;
+    flex-direction: column;
+    / border: .1em solid blue;
+    /* border-radius: .5em;
+    box-shadow: 0 .25em 1em 0 #ccc; */
+    padding: 2em;
+}
+
+.result-btn {
+    padding: 1em;
+}
