@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Student } from '../services/student';
 import { DbService } from '../services/db.service';
+import { StudentsService } from '../services/students.service';
 
 @Component({
   selector: 'app-students',
@@ -14,19 +15,22 @@ export class StudentsComponent implements OnInit {
 
   @Input() update: Student;
 
-  constructor(private dbService: DbService) { }
+  //constructor(private dbService: DbService) { }
+  constructor(private studentsService: StudentsService) { }
 
   ngOnInit() {
     this.getStudents();
   }
 
   getStudents(): void {
-    this.dbService.getStudents()
+    this.studentsService.getStudents()
       .subscribe(students => this.students = students);
   }
 
+
+
   save(): void {
-    this.dbService.updateStudent(this.selected);
+    this.studentsService.updateStudent(this.selected);
   }
 
 }
