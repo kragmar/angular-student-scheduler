@@ -2,13 +2,14 @@
     <mat-form-field class="student-layout__form">
         <mat-label>Tanuló neve</mat-label>
         <mat-select [(value)]="selected">
+            <mat-option [value]="'Új tanuló'">Új tanuló</mat-option>
             <mat-option *ngFor="let student of students" [value]="student">{{ student.name }}</mat-option>
         </mat-select>
     </mat-form-field>
     <ng-container *ngIf="selected">
         <form #form="ngForm" class="student-layout__result">
             <mat-form-field>
-                <input matInput placeholder="Név" [value]="selected.name" [(ngModel)]="selected.name" name="name">
+                <input matInput placeholder="Név" [value]="selected.name" [(ngModel)]="update.name" name="name">
             </mat-form-field>
             <mat-form-field>
                 <input matInput placeholder="Email" [value]="selected.email">
