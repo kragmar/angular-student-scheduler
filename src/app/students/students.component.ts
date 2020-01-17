@@ -28,7 +28,7 @@ export class StudentsComponent implements OnInit {
   }
 
   save(): void {
-    this.studentsService.updateStudent(this.u);
+    this.studentsService.updateStudent(this.update);
   }
 
 }
