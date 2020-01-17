@@ -23,6 +23,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { DailyInfoComponent } from './daily-info/daily-info.component';
 import { StudentsComponent } from './students/students.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { StudentsService } from './services/students.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatFormFieldModule,
     MatInputModule
   ],
-  providers: [DbService, MatDatepickerModule],
+  providers: [DbService, MatDatepickerModule, StudentsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

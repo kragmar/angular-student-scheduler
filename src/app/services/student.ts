@@ -1,10 +1,10 @@
 import { Lesson } from './lesson';
 
 export class Student {
-    id: number;
+    _id?: string;
     name: string;
     telNum: string;
     email: string;
     birthDate: Date;
-    lesson: Lesson[];
+    //lesson: Lesson[];
 }
