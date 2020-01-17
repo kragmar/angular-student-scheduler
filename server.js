@@ -3,7 +3,7 @@ var bodyParser = require("body-parser");
 var mongodb = require("mongodb");
 var ObjectID = mongodb.ObjectID;
 
-var CONTACTS_COLLECTION = "contacts";
+var STUDENTS_COLLECTION = "students";
 
 var app = express();
 app.use(bodyParser.json());
@@ -41,7 +41,7 @@ function handleError(res, reason, message, code) {
  *    GET: finds all contacts
  *    POST: creates a new contact
  */
-
+/
 app.get("/api/students", function(req, res) {
   db.collection(CONTACTS_COLLECTION).find({}).toArray(function(err, docs) {
     if (err) {
@@ -68,7 +68,7 @@ app.post("/api/students", function(req, res) {
     });
   }
 });
-
+*/
 /*  "/api/contacts/:id"
  *    GET: find contact by id
  *    PUT: update contact by id
