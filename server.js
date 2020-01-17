@@ -1,5 +1,5 @@
 var express = require("express");
-var path = require("path");
+/var path = require("path");
 var bodyParser = require("body-parser");
 var mongodb = require("mongodb");
 var ObjectID = mongodb.ObjectID;
@@ -8,6 +8,9 @@ var STUDENTS_COLLECTION = "students";
 
 var app = express();
 app.use(bodyParser.json());
+
+var distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
 
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 var db;
@@ -22,14 +25,14 @@ mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://drumkiller:Qay
   // Save database object from the callback for reuse.
   db = client.db();
   console.log("Database connection ready");
-
+/*
   // Serve only the static files form the dist directory
   app.use(express.static(__dirname + '/dist/student-scheduler-client'));
 
   app.get('/*', function(req,res) {  
     res.sendFile(path.join(__dirname+'/dist/student-scheduler-client/index.html'));
   });
-
+*/
   // Initialize the app.
   var server = app.listen(process.env.PORT || 8080, function () {
     var port = server.address().port;
