@@ -22,6 +22,13 @@ mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://drumkiller:Qay
   db = client.db();
   console.log("Database connection ready");
 
+  // Serve only the static files form the dist directory
+  app.use(express.static(__dirname + '/dist/student-scheduler-client'));
+
+  app.get('/*', function(req,res) {  
+    res.sendFile(path.join(__dirname+'/dist/student-scheduler-client/index.html'));
+  });
+
   // Initialize the app.
   var server = app.listen(process.env.PORT || 8080, function () {
     var port = server.address().port;
