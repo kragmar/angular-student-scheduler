@@ -27,8 +27,8 @@ export class StudentsComponent implements OnInit {
       .subscribe(students => this.students = students);
   }
 
-  save(): void {
-    this.studentsService.updateStudent(this.update);
+  save(updateStudent: Student): void {
+    this.studentsService.updateStudent(updateStudent);
   }
 
 }

@@ -6,7 +6,7 @@
         </mat-select>
     </mat-form-field>
     <ng-container *ngIf="selected">
-        <form #form="ngForm" class="student-layout__result">
+        <form #form="ngForm" class="student-layout__result" (ngSubmit)="save(selected)">
             <mat-form-field>
                 <input matInput placeholder="Név" [value]="selected.name" [(ngModel)]="selected.name" name="name">
             </mat-form-field>
@@ -19,7 +19,7 @@
             <mat-form-field>
                 <input matInput placeholder="Születési dátum" [value]="selected.birthDate">
             </mat-form-field>
-            <button class="result-btn" type="submit" (click)="save()" mat-button>Mentés</button> 
+            <button class="result-btn" type="submit" mat-button>Mentés</button> 
         </form>
     </ng-container>
 </div>
