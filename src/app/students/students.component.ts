@@ -13,7 +13,7 @@ export class StudentsComponent implements OnInit {
   students: Student[];
   selected: Student;
 
-  @Input() update: Student;
+  update: Student;
 
   //constructor(private dbService: DbService) { }
   constructor(private studentsService: StudentsService) { }
