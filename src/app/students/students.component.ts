@@ -11,7 +11,7 @@ import { StudentsService } from '../services/students.service';
 export class StudentsComponent implements OnInit {
 
   students: Student[];
-  @Input() selected: Student;
+  selected: Student;
 
   @Input() update: Student;
 
