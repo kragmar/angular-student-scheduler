@@ -28,8 +28,8 @@ export class StudentsComponent implements OnInit {
   }
 
   save(updateStudent: Student): void {
-    console.log(updateStudent.name);
     this.studentsService.updateStudent(updateStudent);
+    console.log(updateStudent.name);
   }
 
 }
