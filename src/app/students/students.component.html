@@ -1,7 +1,7 @@
 <div class="student-layout">
     <mat-form-field class="student-layout__form">
         <mat-label>Tanuló neve</mat-label>
-        <mat-select [(n)]="selected">
+        <mat-select [(ngodel)]="selected">
             <mat-option *ngFor="let student of students" [value]="student">{{ student.name }}</mat-option>
         </mat-select>
     </mat-form-field>
