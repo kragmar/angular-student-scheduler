@@ -13,16 +13,16 @@
       <ng-container *ngIf="selected">
           <form #form="ngForm" class="student-layout__result" (ngSubmit)="save(selected)">
               <mat-form-field>
-                  <input matInput placeholder="Név" [(ngModel)]="selected.name" name="name">
+                  <input matInput placeholder="Tanuló neve" [(ngModel)]="selected.name" name="name" required>
               </mat-form-field>
               <mat-form-field>
-                  <input matInput placeholder="Email" [(ngModel)]="selected.email" name="email">
+                  <input matInput placeholder="Email címe" [(ngModel)]="selected.email" name="email" required>
               </mat-form-field>
               <mat-form-field>
-                  <input matInput placeholder="Telefonszám" [(ngModel)]="selected.telNum" name="telnum">
+                  <input matInput placeholder="Telefonszáma" [(ngModel)]="selected.telNum" name="telnum" required>
               </mat-form-field>
               <mat-form-field>
-                  <input matInput placeholder="Születési dátum" [(ngModel)]="selected.birthDate" name="birthdate">
+                  <input matInput placeholder="Születési dátuma" [(ngModel)]="selected.birthDate" name="birthdate" required>
               </mat-form-field>
               <button class="result-btn" type="submit" mat-button (click)="openDialog()">Mentés</button> 
           </form>
@@ -32,16 +32,16 @@
       <ng-container *ngIf="showVarNew">
         <form #form="ngForm" class="student-layout__new-student" (ngSubmit)="add()">
             <mat-form-field>
-                <input matInput placeholder="Név" [(ngModel)]="newStudent.name" name="name">
+                <input matInput placeholder="Tanuló neve" [(ngModel)]="newStudent.name" name="name" required>
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Email" [(ngModel)]="newStudent.email" name="email">
+                <input matInput placeholder="Email címe" [(ngModel)]="newStudent.email" name="email" required>
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Telefonszám" [(ngModel)]="newStudent.telNum" name="telnum">
+                <input matInput placeholder="Telefonszáma" [(ngModel)]="newStudent.telNum" name="telnum" required>
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Születési dátum" [(ngModel)]="newStudent.birthDate" name="birthdate">
+                <input matInput placeholder="Születési dátuma" [(ngModel)]="newStudent.birthDate" name="birthdate" required>
             </mat-form-field>
             <button class="result-btn" type="submit" mat-button (click)="openDialog()">Mentés</button> 
         </form>
