@@ -7,7 +7,7 @@ nav {
     top: 0;
     left: 0;
     overflow-x: hidden;
-    background: rgb(124, 137, 255);
+    background: #455691;
     transition: .3s ease;
     width: 4em;
 }
@@ -41,10 +41,13 @@ nav ul {
 
 nav a {
     display: block;
+    font-size: 1em;
     text-decoration: none;
+    text-align: left;
     padding: 1em;
+    white-space: nowrap;
     color: #fff;
-    background: rgb(181, 188, 255);
+    /*border-right: .5em solid transparent; */
 }
 
 .nav-logout {
@@ -53,5 +56,17 @@ nav a {
 }
 
 nav a:hover {
-    background: rgb(86, 39, 255);
+    background: #7291ff;
+    /*border-right-color: #b5c5ff;*/
+}
+
+nav mat-icon {
+    text-align: center;
+    font-size: 1.75em;
+    margin-right: 1em;
+}
+
+.nav-active {
+    background: #7291ff;
+    border-right-color: #b5c5ff;
 }

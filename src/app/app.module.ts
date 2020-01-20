@@ -7,7 +7,8 @@ import {
   MatNativeDateModule,
   MatExpansionModule,
   MatSelectModule,
-  MatFormFieldModule } from '@angular/material';
+  MatFormFieldModule,
+  MatIconModule } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -48,7 +49,8 @@ import { StudentsService } from './services/students.service';
     MatExpansionModule,
     MatSelectModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatIconModule
   ],
   providers: [DbService, MatDatepickerModule, StudentsService],
   bootstrap: [AppComponent]
