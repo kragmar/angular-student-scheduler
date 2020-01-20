@@ -53,6 +53,7 @@ nav a {
 .nav-logout {
     margin-top: auto;
     margin-bottom: 0;
+    background: #262f50;
 }
 
 nav a:hover {
