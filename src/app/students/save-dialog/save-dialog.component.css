@@ -1,9 +1,12 @@
 .save-dialog {
   display: flex;
+  align-items: center;
   font-size: 1.5em;
+  color: #fff;
+  padding: .5em;
 }
 
-mat-icon {
+i {
   font-size: 2em;
-  margin-left: em;
+  margin-left: .5em;
 }
