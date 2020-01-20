@@ -8,7 +8,8 @@ import {
   MatExpansionModule,
   MatSelectModule,
   MatFormFieldModule,
-  MatIconModule } from '@angular/material';
+  MatIconModule,
+  MatDialogModule } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import { DailyInfoComponent } from './daily-info/daily-info.component';
 import { StudentsComponent } from './students/students.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StudentsService } from './services/students.service';
+import { SaveDialogComponent } from './students/save-dialog/save-dialog.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { StudentsService } from './services/students.service';
     NavbarComponent,
     DailyInfoComponent,
     StudentsComponent,
-    DashboardComponent
+    DashboardComponent,
+    SaveDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,11 @@ import { StudentsService } from './services/students.service';
     MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
+  ],
+  entryComponents: [
+    SaveDialogComponent
   ],
   providers: [DbService, MatDatepickerModule, StudentsService],
   bootstrap: [AppComponent]
