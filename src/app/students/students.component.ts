@@ -4,7 +4,7 @@ import { DbService } from '../services/db.service';
 import { StudentsService } from '../services/students.service';
 import { SaveDialogComponent } from './save-dialog/save-dialog.component';
 
-import { MatDialog } from '@angular/material/';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-students',
