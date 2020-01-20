@@ -15,7 +15,7 @@ export class StudentsComponent implements OnInit {
 
   students: Student[];
   selected: Student;
-  newStudent: Student = {'':''};
+  newStudent: Student = {};
 
   showVarSearch: boolean;
   showVarNew: boolean;
@@ -54,7 +54,7 @@ export class StudentsComponent implements OnInit {
   toggleNew(): void {
     this.showVarNew = true;
     this.showVarSearch = false;
-    console.log(this.showVarNew);
+
   }
 
 }
