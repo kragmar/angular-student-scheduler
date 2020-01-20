@@ -29,6 +29,7 @@ nav:hover ~ .nav-bg {
 
 nav:hover {
     width: 15em;
+    box-shadow: 0 0 2em .1em #091235c5;
 }
 
 nav ul {
