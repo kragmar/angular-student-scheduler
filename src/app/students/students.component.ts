@@ -16,7 +16,7 @@ export class StudentsComponent implements OnInit {
   students: Student[];
   selected: Student;
 
-  update: Student;
+  showVar: boolean;
 
   //constructor(private dbService: DbService) { }
   constructor(private studentsService: StudentsService, private dialog: MatDialog) { }
@@ -37,6 +37,14 @@ export class StudentsComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(SaveDialogComponent, {panelClass: 'save-dialog-box'})
+  }
+
+  toggleSearch(): void {
+    this.showVar = true;
+  }
+
+  toggleNew(): void {
+    this.showVar = false;
   }
 
 }

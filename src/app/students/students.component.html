@@ -1,11 +1,15 @@
 <div class="student-layout">
+    <div class="student-layout__buttons">
+      <button mat-button type="button" class="student-btn" (click)="toggleSearch()">Keresés</button>
+      <button mat-button type="button" class="student-btn" (click)="toggleNew()">Új tanuló</button>
+    </div>
     <mat-form-field class="student-layout__form">
         <mat-label>Tanuló neve</mat-label>
         <mat-select [(ngModel)]="selected">
             <mat-option *ngFor="let student of students" [value]="student">{{ student.name }}</mat-option>
         </mat-select>
     </mat-form-field>
-    <ng-container *ngIf="selected">
+    <ng-container *ngIf="button">
         <form #form="ngForm" class="student-layout__result" (ngSubmit)="save(selected)">
             <mat-form-field>
                 <input matInput placeholder="Név" [(ngModel)]="selected.name" name="name">

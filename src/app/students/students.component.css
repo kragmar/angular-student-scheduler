@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
+        "buttons ."
         "search ."
         "result .";
     gap: 1em;
@@ -9,7 +10,19 @@
     margin-left: 4em;
 }
 
+.student-layout__buttons {
+    grid-area: buttons;
+    padding: 2em;
+    border: .1em solid blue;
+}
+
+.student-btn {
+    padding: .5em;
+    width: 10%;
+}
+
 .student-layout__form {
+    grid-area: search;
     border: .1em solid blue;
     /* border-radius: .5em;
     box-shadow: 0 .25em 1em 0 #ccc; */
