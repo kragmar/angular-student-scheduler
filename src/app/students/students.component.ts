@@ -14,7 +14,7 @@ import { MatDialog } from '@angular/material';
 export class StudentsComponent implements OnInit {
 
   students: Student[];
-  selected: Student;
+  selected: any = {};
   newStudent: any = {};
 
   showVarSearch: boolean;
@@ -34,12 +34,14 @@ export class StudentsComponent implements OnInit {
 
   add(): void {
     this.studentsService.createStudent(this.newStudent)
-                        .subscribe(() => this.showVarNew = false);
+                        .subscribe(() => this.showVarNew = false,
+                                  () => this.newStudent = {});
   }
 
   save(updateStudent: Student): void {
     this.studentsService.updateStudent(updateStudent)
-                        .subscribe(() => this.showVarSearch = false);
+                        .subscribe(() => this.showVarSearch = false,
+                                  () => this.selected = {});
   }
 
   openDialog(): void {
