@@ -32,8 +32,8 @@ export class StudentsService {
   }
 
   // delete("/api/students/:id")
-  deleteStudent(delStudentId: String): Observable<Student> {
-    const url = this.studentsUrl + '/' + delStudentId;
+  deleteStudent(delStudent: Student): Observable<Student> {
+    const url = this.studentsUrl + '/' + delStudent._id;
     return this.http.delete<Student>(url, this.httpOptions)
                     .pipe(
                       catchError(this.handleError<Student>('deleteStudent'))
@@ -41,8 +41,9 @@ export class StudentsService {
   }
 
   // put("/api/students/:id")
-  updateStudent(putStudent: Student): Observable<Student> {
-    return this.http.put(this.studentsUrl, putStudent, this.httpOptions)
+  updateStudent(putStudent: Student): Observable<any> {
+    const url = this.studentsUrl + '/' + putStudent._id;
+    return this.http.put(url, putStudent, this.httpOptions)
                     .pipe(
                       catchError(this.handleError<any>('updateStudent'))
                     );
