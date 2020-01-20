@@ -1,0 +1,6 @@
+.save-dialog {
+  display: flex;
+  background: #38b75e;
+  font-size: 1.5em;
+  padding: 1em;
+}
