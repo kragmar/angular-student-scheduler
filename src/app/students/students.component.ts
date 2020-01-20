@@ -24,12 +24,12 @@ export class StudentsComponent implements OnInit {
 
   getStudents(): void {
     this.studentsService.getStudents()
-      .subscribe(students => this.students = students);
+                        .subscribe(students => this.students = students);
   }
 
   save(updateStudent: Student): void {
-    this.studentsService.updateStudent(updateStudent);
-    console.log(updateStudent.name);
+    this.studentsService.updateStudent(updateStudent)
+                        .subscribe(() => console.log(updateStudent.name));
   }
 
 }
