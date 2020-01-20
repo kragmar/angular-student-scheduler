@@ -54,6 +54,20 @@
 }
 
 .student-layout__result {
+    grid-area: search;
+    display: flex;
+    flex-direction: column;
+    border: .1em solid blue;
+    /* border-radius: .5em;
+    box-shadow: 0 .25em 1em 0 #ccc; */
+    padding: 2em;
+}
+
+.result-btn {
+    padding: 1em;
+}
+
+.student-layout__new-student {
     grid-area: result;
     display: flex;
     flex-direction: column;

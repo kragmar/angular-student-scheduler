@@ -15,8 +15,10 @@ export class StudentsComponent implements OnInit {
 
   students: Student[];
   selected: Student;
+  newStudent: Student = {'':''};
 
-  showVar: boolean;
+  showVarSearch: boolean;
+  showVarNew: boolean;
 
   //constructor(private dbService: DbService) { }
   constructor(private studentsService: StudentsService, private dialog: MatDialog) { }
@@ -30,9 +32,14 @@ export class StudentsComponent implements OnInit {
                         .subscribe(students => this.students = students);
   }
 
+  add(): void {
+    this.studentsService.createStudent(this.newStudent)
+                        .subscribe(() => this.showVarNew = false);
+  }
+
   save(updateStudent: Student): void {
     this.studentsService.updateStudent(updateStudent)
-                        .subscribe(() => console.log(updateStudent.name));
+                        .subscribe(() => this.showVarSearch = false);
   }
 
   openDialog(): void {
@@ -40,11 +47,14 @@ export class StudentsComponent implements OnInit {
   }
 
   toggleSearch(): void {
-    this.showVar = true;
+    this.showVarSearch = true;
+    this.showVarNew = false;
   }
 
   toggleNew(): void {
-    this.showVar = false;
+    this.showVarNew = true;
+    this.showVarSearch = false;
+    console.log(this.showVarNew);
   }
 
 }
