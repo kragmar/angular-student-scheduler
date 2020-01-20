@@ -1,9 +1,9 @@
 .save-dialog {
   display: flex;
-  background: #69bf5f;
   font-size: 1.5em;
 }
 
 mat-icon {
   font-size: 2em;
+  margin-left: em;
 }

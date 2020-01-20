@@ -36,7 +36,7 @@ export class StudentsComponent implements OnInit {
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(SaveDialogComponent)
+    const dialogRef = this.dialog.open(SaveDialogComponent, {panelClass: 'save-dialog-box'})
   }
 
 }
