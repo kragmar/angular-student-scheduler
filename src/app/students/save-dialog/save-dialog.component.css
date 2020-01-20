@@ -1,6 +1,9 @@
 .save-dialog {
   display: flex;
-  background: #38b75e;
+  background: #69bf5f;
   font-size: 1.5em;
-  padding: 1em;
+}
+
+mat-icon {
+  font-size: 2em;
 }
