@@ -54,7 +54,7 @@
 }
 
 .student-layout__result {
-    grid-area: search;
+    grid-area: result;
     display: flex;
     flex-direction: column;
     border: .1em solid blue;
@@ -68,7 +68,7 @@
 }
 
 .student-layout__new-student {
-    grid-area: result;
+    grid-area: search;
     display: flex;
     flex-direction: column;
     border: .1em solid blue;
