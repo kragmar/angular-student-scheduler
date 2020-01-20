@@ -29,7 +29,7 @@ nav:hover ~ .nav-bg {
 
 nav:hover {
     width: 15em;
-    box-shadow: 0 0 2em .1em #091235c5;
+    box-shadow: 0 0 1em 0 #091235c5;
 }
 
 nav ul {
@@ -48,7 +48,6 @@ nav a {
     padding: 1em;
     white-space: nowrap;
     color: #fff;
-    /*border-right: .5em solid transparent; */
 }
 
 .nav-logout {
@@ -59,7 +58,7 @@ nav a {
 
 nav a:hover {
     background: #7291ff;
-    /*border-right-color: #b5c5ff;*/
+    /* border-right: .5em solid #b5c5ff; */
 }
 
 nav mat-icon {
@@ -70,5 +69,5 @@ nav mat-icon {
 
 .nav-active {
     background: #7291ff;
-    border-right-color: #b5c5ff;
+    border-right: .5em solid #b5c5ff;
 }
