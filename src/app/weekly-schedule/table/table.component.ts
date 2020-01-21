@@ -29,7 +29,9 @@ export class TableComponent implements OnInit {
   datepickerDate: Date;
 
   //constructor(private dbService: DbService) { }
-  constructor(private lessonsService: LessonsService, private studentsService: StudentsService) { }
+  constructor(private lessonsService: LessonsService, private studentsService: StudentsService) {
+    //setInterval(() => {this.today = new Date()}, 30000);
+  }
 
   ngOnInit() {
     this.getLessons();
