@@ -128,7 +128,7 @@ export class TableComponent implements OnInit {
   }
 
   setRow(lesson: Lesson, date: Date): Lesson[] {
-    let lessonDate = lesson.lessonDate);
+    let lessonDate = lesson.lessonDate;
     if(lessonDate.getTime() == date.getTime()) {
       return new Array<Lesson>(lesson);
     }
