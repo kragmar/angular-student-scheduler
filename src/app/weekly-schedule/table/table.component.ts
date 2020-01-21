@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Lesson } from '../../services/lesson';
-import { DbService } from '../../services/db.service';
+//import { DbService } from '../../services/db.service';
 import { Student } from '../../services/student';
 import { LessonsService } from '../../services/lessons.service';
 import { StudentsService } from '../../services/students.service';
