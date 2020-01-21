@@ -13,6 +13,9 @@
       <div class="table__nav__date__year">{{ currentYear }}</div>
       <div class="table__nav__date__month">{{ monthsLong[currentMonth] }}</div>
     </div>
+    <div>
+      {{ today.getDate() }}
+    </div>
   </div>
   <div class="table__datepicker">
     <input [matDatepicker]="picker" type="hidden" [(ngModel)]="datepickerDate">

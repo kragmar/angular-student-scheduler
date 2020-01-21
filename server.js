@@ -5,6 +5,7 @@ var mongodb = require("mongodb");
 var ObjectID = mongodb.ObjectID;
 
 var STUDENTS_COLLECTION = "students";
+var LESSONS_COLLECTION = "lessons";
 
 var app = express();
 app.use(bodyParser.json());
@@ -37,15 +38,15 @@ mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://drumkiller:Qay
   });
 });
 
-// CONTACTS API ROUTES BELOW
-
 // Generic error handler used by all endpoints.
 function handleError(res, reason, message, code) {
   console.log("ERROR: " + reason);
   res.status(code || 500).json({"error": message});
 }
 
-/*  "/api/contacts"
+// STUDENTS API ROUTES BELOW
+
+/*  "/api/students"
  *    GET: finds all students
  *    POST: creates a new student
  */
@@ -111,6 +112,81 @@ app.delete("/api/students/:id", function(req, res) {
   db.collection(STUDENTS_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
     if (err) {
       handleError(res, err.message, "Failed to delete student");
+    } else {
+      res.status(200).json(req.params.id);
+    }
+  });
+});
+
+
+// LESSONS API ROUTES BELOW
+
+/*  "/api/lessons"
+ *    GET: finds all lessons
+ *    POST: creates a new lesson
+ */
+
+app.get("/api/lessons", function(req, res) {
+  db.collection(LESSONS_COLLECTION).find({}).toArray(function(err, docs) {
+    if (err) {
+      handleError(res, err.message, "Failed to get lessons.");
+    } else {
+      res.status(200).json(docs);
+    }
+  });
+});
+
+app.post("/api/lessons", function(req, res) {
+  var newLesson = req.body;
+  newLesson.createDate = new Date();
+
+  if (!req.body.name) {
+    handleError(res, "Invalid user input", "Must provide a name.", 400);
+  } else {
+    db.collection(LESSONS_COLLECTION).insertOne(newLesson, function(err, doc) {
+      if (err) {
+        handleError(res, err.message, "Failed to create new lesson.");
+      } else {
+        res.status(201).json(doc.ops[0]);
+      }
+    });
+  }
+});
+
+/*  "/api/lessons/:id"
+ *    GET: find lesson by id
+ *    PUT: update lesson by id
+ *    DELETE: deletes lesson by id
+ */
+
+app.get("/api/lessons/:id", function(req, res) {
+  db.collection(LESSONS_COLLECTION).findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
+    if (err) {
+      handleError(res, err.message, "Failed to get lesson");
+    } else {
+      res.status(200).json(doc);
+    }
+  });
+});
+
+app.put("/api/lessons/:id", function(req, res) {
+  var updateDoc = req.body;
+  delete updateDoc._id;
+
+  db.collection(LESSONS_COLLECTION).updateOne({_id: new ObjectID(req.params.id)}, {$set: updateDoc}, function(err, doc) {
+    if (err) {
+      handleError(res, err.message, "Failed to update lesson");
+    } else {
+      updateDoc._id = req.params.id;
+      res.status(200).json(updateDoc);
+    }
+  });
+});
+
+app.delete("/api/lessons/:id", function(req, res) {
+  db.collection(LESSONS_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
+    if (err) {
+      handleError(res, err.message, "Failed to delete lesson");
     } else {
       res.status(200).json(req.params.id);
     }
