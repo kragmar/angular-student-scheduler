@@ -1,3 +1,67 @@
-<p>
-lessons works!
-</p>
+<div class="lesson-layout">
+    <div class="lesson-layout__buttons">
+      <button mat-button type="button" class="lesson-btn" (click)="toggleNew()">Új óra</button>
+      <button mat-button type="button" class="lesson-btn" (click)="toggleDelete()">Törlés</button>
+    </div>
+    <ng-container *ngIf="showVarNew; else showVarFalse">
+      <!-- <mat-form-field class="lesson-layout__form">
+          <mat-label>Tanuló neve</mat-label>
+          <mat-select [(ngModel)]="selected">
+              <mat-option *ngFor="let lesson of lessons" [value]="student">{{ student.name }}</mat-option>
+          </mat-select>
+      </mat-form-field> -->
+      <!-- <ng-container *ngIf="selected"> -->
+          <form #form="ngForm" class="lesson-layout__result" (ngSubmit)="add()">
+              <mat-form-field>
+                  <mat-label>Tanuló neve</mat-label>
+                  <mat-select [(ngModel)]="newLesson.student" name="selectStudent" required>
+                      <mat-option *ngFor="let student of students" [value]="student">{{ student.name }}</mat-option>
+                  </mat-select>
+              </mat-form-field>
+              <mat-form-field>
+                  <mat-label>Óra típusa</mat-label>
+                  <mat-select [(ngModel)]="newLesson.lessonType" name="lessonType" required>
+                      <mat-option *ngFor="let type of lessonTypes" [value]="type">{{ type }}</mat-option>
+                  </mat-select>
+              </mat-form-field>
+              <mat-form-field>
+                  <input matInput placeholder="Óra dátuma (ÉÉÉÉ-HH-NN)" [(ngModel)]="newLesson.lessonDate" name="lessonDate" required>
+              </mat-form-field>
+              <mat-form-field>
+                  <mat-label>Óra időpontja</mat-label>
+                  <mat-select [(ngModel)]="newLesson.lessonStart" name="lessonTime" required>
+                      <mat-option *ngFor="let time of lessonTimes" [value]="time">{{ time }}</mat-option>
+                  </mat-select>
+              </mat-form-field>
+              <button class="result-btn" type="submit" mat-button (click)="openDialog()">Mentés</button> 
+          </form>
+      <!-- </ng-container> -->
+    </ng-container>
+    <ng-template #showVarFalse>
+      <ng-container *ngIf="showVarDelete">
+        <mat-form-field class="lesson-layout__form">
+            <mat-label>Tanuló neve</mat-label>
+            <mat-select [(ngModel)]="selected">
+                <mat-option *ngFor="let student of students" [value]="student">{{ student.name }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <ng-container *ngIf="selected">
+            <form #form="ngForm" class="student-layout__result" (ngSubmit)="delete()">
+                <mat-form-field>
+                    <input matInput placeholder="Tanuló neve" [(ngModel)]="selected.name" name="name" disabled>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Email címe" [(ngModel)]="selected.email" name="email" disabled>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Telefonszáma" [(ngModel)]="selected.telNum" name="telnum" disabled>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Születési dátuma" [(ngModel)]="selected.birthDate" name="birthdate" disabled>
+                </mat-form-field>
+                <button class="result-btn" type="submit" mat-button (click)="openDialog()">Törlés</button> 
+            </form>
+        </ng-container>
+      </ng-container>
+    </ng-template>
+</div>

@@ -1,0 +1,84 @@
+.lesson-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "buttons ."
+        "search ."
+        "result .";
+    gap: 1em;
+    padding: 1em;
+    margin-left: 4em;
+}
+
+.lesson-layout__buttons {
+    grid-area: buttons;
+    padding: 2em;
+    border: .1em solid blue;
+}
+
+.lesson-btn {
+    padding: 1em;
+    width: 20%;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.lesson-layout__form {
+    grid-area: search;
+    border: .1em solid blue;
+    /* border-radius: .5em;
+    box-shadow: 0 .25em 1em 0 #ccc; */
+    padding: 2em;
+}
+
+.form-name {
+    display: grid;
+    grid-template-columns: 1fr .1fr;
+    grid-template-rows: 2em auto;
+    grid-template-areas: 
+        ". ."
+        "select btn";
+    gap: .25em;
+    flex-direction: column;
+}
+
+.form-select {
+    grid-area: select;
+    padding: .5em;
+}
+
+.form-btn-search {
+    grid-area: btn;
+    width: 100%;
+    margin-left: auto;
+    padding: .5em;
+    text-align: center;
+}
+
+.lesson-layout__result {
+    grid-area: search;
+    display: flex;
+    flex-direction: column;
+    border: .1em solid blue;
+    /* border-radius: .5em;
+    box-shadow: 0 .25em 1em 0 #ccc; */
+    padding: 2em;
+}
+
+.result-btn {
+    padding: 1em;
+}
+
+.lesson-layout__new-student {
+    grid-area: search;
+    display: flex;
+    flex-direction: column;
+    border: .1em solid blue;
+    /* border-radius: .5em;
+    box-shadow: 0 .25em 1em 0 #ccc; */
+    padding: 2em;
+}
+
+.result-btn {
+    padding: 1em;
+}

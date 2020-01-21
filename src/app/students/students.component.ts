@@ -35,32 +35,32 @@ export class StudentsComponent implements OnInit {
 
   add(): void {
     this.studentsService.createStudent(this.newStudent)
-                        .subscribe(() => this.showVarNew = false,
-                                  () => this.newStudent = {});
+                        .subscribe(() => this.showVarNew = false);
   }
 
   save(): void {
     this.studentsService.updateStudent(this.selected)
-                        .subscribe(() => this.showVarSearch = false,
-                                  () => this.selected = {});
+                        .subscribe(() => this.showVarSearch = false);
   }
 
   delete(): void {
     this.studentsService.deleteStudent(this.selected)
                         .subscribe(() => this.showVarDelete = false);
   }
-
+ 
   openDialog(): void {
     const dialogRef = this.dialog.open(SaveDialogComponent, {panelClass: 'save-dialog-box'});
   }
 
   toggleSearch(): void {
     this.getStudents();
+    this.selected = {};
     this.showVarSearch = true;
     this.showVarNew = false;
   }
 
   toggleNew(): void {
+    this.newStudent = {};
     this.showVarNew = true;
     this.showVarSearch = false;
   }
