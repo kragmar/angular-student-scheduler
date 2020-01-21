@@ -14,7 +14,7 @@
           <form #form="ngForm" class="lesson-layout__result" (ngSubmit)="add()">
               <mat-form-field>
                   <mat-label>Tanuló neve</mat-label>
-                  <mat-select [(ngModel)]="newLesson.student" name="selectStudent" required>
+                  <mat-select [(ngModel)]="newLesson.student" name="name" required>
                       <mat-option *ngFor="let student of students" [value]="student">{{ student.name }}</mat-option>
                   </mat-select>
               </mat-form-field>
