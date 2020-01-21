@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Lesson } from '../../services/lesson';
 import { DbService } from '../../services/db.service';
-import { Student } from 'src/app/services/student';
+import { Student } from '../../services/student';
+import { LessonsService } from '../../services/lessons.service';
+import { StudentsService } from '../../services/students.service';
 
 @Component({
   selector: 'app-table',
@@ -12,7 +14,7 @@ export class TableComponent implements OnInit {
 
   lessons: Lesson[];
   students: Student[];
-  columns: string[];
+  columns: string[] = ["12:50", "13:40", "14:30", "15:20", "16:10", "17:00", "17:50", "18:40", "19:30"];
 
   lesson: Lesson[];
 
@@ -26,28 +28,23 @@ export class TableComponent implements OnInit {
 
   datepickerDate: Date;
 
-  constructor(private dbService: DbService) { }
+  //constructor(private dbService: DbService) { }
+  constructor(private lessonsService: LessonsService, private studentsService: StudentsService) { }
 
   ngOnInit() {
     this.getLessons();
     this.getStudents();
-    this.getColumns();
     this.datepickerDate = new Date();
   }
 
   getLessons(): void {
-    this.dbService.getLessons()
-      .subscribe(lessons => this.lessons = lessons);
+    this.lessonsService.getLessons()
+                       .subscribe(lessons => this.lessons = lessons);
   }
 
   getStudents(): void {
-    this.dbService.getStudents()
-      .subscribe(students => this.students = students);
-  }
-
-  getColumns(): void {
-    this.dbService.getColumns()
-      .subscribe(columns => this.columns = columns);
+    this.studentsService.getStudents()
+                        .subscribe(students => this.students = students);
   }
 
   calcDays(index: number): Date {
@@ -131,7 +128,7 @@ export class TableComponent implements OnInit {
   }
 
   setRow(lesson: Lesson, date: Date): Lesson[] {
-    let lessonDate = new Date(lesson.lessonDate);
+    let lessonDate = lesson.lessonDate);
     if(lessonDate.getTime() == date.getTime()) {
       return new Array<Lesson>(lesson);
     }

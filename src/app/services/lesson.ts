@@ -2,10 +2,10 @@ import { Student } from './student';
 import { Teacher } from './teacher';
 
 export class Lesson {
-  /* id: number; */
-  lessonDate: string;
+  _id?: string;
+  lessonDate: Date;
   lessonStart: string;
   lessonType: string;
   student: Student;
-  teacher: Teacher;
+  //teacher: Teacher;
 }
