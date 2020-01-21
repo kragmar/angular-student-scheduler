@@ -19,6 +19,7 @@ export class StudentsComponent implements OnInit {
 
   showVarSearch: boolean;
   showVarNew: boolean;
+  showVarDelete: boolean;
 
   //constructor(private dbService: DbService) { }
   constructor(private studentsService: StudentsService, private dialog: MatDialog) { }
@@ -38,10 +39,15 @@ export class StudentsComponent implements OnInit {
                                   () => this.newStudent = {});
   }
 
-  save(updateStudent: Student): void {
-    this.studentsService.updateStudent(updateStudent)
+  save(): void {
+    this.studentsService.updateStudent(this.selected)
                         .subscribe(() => this.showVarSearch = false,
                                   () => this.selected = {});
+  }
+
+  delete(): void {
+    this.studentsService.deleteStudent(this.selected)
+                        .subscribe(() => this.showVarDelete = false);
   }
 
   openDialog(): void {
@@ -49,12 +55,19 @@ export class StudentsComponent implements OnInit {
   }
 
   toggleSearch(): void {
+    this.getStudents();
     this.showVarSearch = true;
     this.showVarNew = false;
   }
 
   toggleNew(): void {
     this.showVarNew = true;
+    this.showVarSearch = false;
+  }
+
+  toggleDelete(): void {
+    this.showVarDelete = true;
+    this.showVarNew = false;
     this.showVarSearch = false;
   }
 
