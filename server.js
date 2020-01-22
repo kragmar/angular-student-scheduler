@@ -109,13 +109,15 @@ app.put("/api/students/:id", function(req, res) {
 });
 
 app.delete("/api/students/:id", function(req, res) {
+  var id;
+
   db.collection(STUDENTS_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
     if (err) {
       handleError(res, err.message, "Failed to delete student");
     } else {
       res.status(200).json(req.params.id);
 
-      var id = new ObjectID(req.params.id);
+      id = new ObjectID(req.params.id);
       var date = new Date();
       var futureDate = date.getFullYear() + '-0' + (date.getMonth()+1) + '-' + date.getDate();
       console.log(id + " " + futureDate);
@@ -123,9 +125,11 @@ app.delete("/api/students/:id", function(req, res) {
 
     }
   });
-  db.collection(LESSONS_COLLECTION).deleteMany({student: {_id: {$eq: id}}});
-  console.log("NAEZ");
-  
+  db.collection(LESSONS_COLLECTION).deleteMany({student: {_id: {$eq: id}}}, function(err, result)
+  {
+    console.log("NAEZ");
+  });
+
 });
 
 
