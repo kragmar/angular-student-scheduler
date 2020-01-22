@@ -62,6 +62,7 @@ export class LessonsComponent implements OnInit {
   }
 
   toggleDelete(): void {
+    this.getLessons();
     this.showVarNew = false;
     this.showVarDelete = true;
   }
