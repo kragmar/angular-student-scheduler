@@ -115,10 +115,10 @@ app.delete("/api/students/:id", function(req, res) {
     } else {
       res.status(200).json(req.params.id);
 
+      var id = new ObjectID(req.params.id);
       var futureDate = new Date();
-      console.log(_id + " " + futureDate);
-      db.collection(LESSONS_COLLECTION).remove({_id: new ObjectID(req.params.id), lessonDate: {$gt : futureDate}});
-      console.log(_id + " " + futureDate);
+      console.log(id + " " + futureDate);
+      db.collection(LESSONS_COLLECTION).remove({student: {_id: {$eq: id}}, lessonDate: {$gt : futureDate}});
     }
   });
 });
