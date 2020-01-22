@@ -118,7 +118,7 @@ app.delete("/api/students/:id", function(req, res) {
       var id = new ObjectID(req.params.id);
       var futureDate = new Date();
       console.log(id + " " + futureDate);
-      db.collection(LESSONS_COLLECTION).remove({student: {_id: {$eq: id}}, lessonDate: {$gt : futureDate}});
+      db.collection(LESSONS_COLLECTION).deleteMany({student: {_id: {$eq: id}}, lessonDate: {$gt : futureDate}});
     }
   });
 });
