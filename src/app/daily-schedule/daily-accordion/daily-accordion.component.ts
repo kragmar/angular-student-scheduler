@@ -1,8 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DbService } from '../../services/db.service';
+//import { Student } from '../../services/student';
 import { Lesson } from "../../services/lesson";
-import { Student } from 'src/app/services/student';
-import { LessonPost } from 'src/app/services/lesson-post';
+import { LessonsService } from '../../services/lessons.service';
 
 @Component({
   selector: 'app-daily-accordion',
@@ -12,39 +11,19 @@ import { LessonPost } from 'src/app/services/lesson-post';
 export class DailyAccordionComponent implements OnInit {
 
   lessons: Lesson[];
-  students: Student[];
-  columns: string[];
+  columns: string[] = ["12:50", "13:40", "14:30", "15:20", "16:10", "17:00", "17:50", "18:40", "19:30"];
 
   today = new Date();
-  
-  @Input() lessonDate: string;
-  @Input() lessonStart: string;
-  @Input() lessonType: string;
-  @Input() studentId: number;
 
-  lessonPost: LessonPost[];
-
-  constructor(private dbService: DbService) { }
+  constructor(private lessonsService: LessonsService) { }
 
   ngOnInit() {
     this.getLessons();
-    this.getStudents();
-    this.getColumns();
   }
 
   getLessons(): void {
-    this.dbService.getLessons()
+    this.lessonsService.getLessons()
       .subscribe(lessons => this.lessons = lessons);
-  }
-
-  getStudents(): void {
-    this.dbService.getStudents()
-      .subscribe(students => this.students = students);
-  }
-
-  getColumns(): void {
-    this.dbService.getColumns()
-      .subscribe(columns => this.columns = columns);
   }
 
   getTodaysLessons(lesson: Lesson): Lesson[] {
