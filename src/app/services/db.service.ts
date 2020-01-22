@@ -6,7 +6,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Lesson } from './lesson';
 import { Student } from './student';
-import { LessonPost } from './lesson-post';
 import { Teacher } from './teacher';
 
 @Injectable({
