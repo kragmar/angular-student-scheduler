@@ -121,10 +121,11 @@ app.delete("/api/students/:id", function(req, res) {
       console.log(id + " " + futureDate);
       /* db.collection(LESSONS_COLLECTION).deleteMany({student: {_id: {$eq: id}}, lessonDate: {$gt : futureDate}}); */
 
-      db.collection(LESSONS_COLLECTION).deleteMany({student: {_id: {$eq: id}}});
-      console.log("Ügyes! :D");
     }
   });
+  db.collection(LESSONS_COLLECTION).deleteMany({student: {_id: {$eq: id}}});
+  console.log("NAEZ");
+  
 });
 
 
