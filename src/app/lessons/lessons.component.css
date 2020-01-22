@@ -56,7 +56,7 @@
 }
 
 .lesson-layout__result {
-    grid-area: search;
+    grid-area: result;
     display: flex;
     flex-direction: column;
     border: .1em solid blue;
@@ -69,7 +69,7 @@
     padding: 1em;
 }
 
-.lesson-layout__new-student {
+.lesson-layout__new-lesson {
     grid-area: search;
     display: flex;
     flex-direction: column;
