@@ -48,6 +48,7 @@ thead th {
 
 tbody td {
     border-left: .1em solid black;
+    border-bottom: .1em solid black;
     /*border-radius: .5em;
     box-shadow: 0 .1em .3em 0 #ccc;*/
     padding: .5em;

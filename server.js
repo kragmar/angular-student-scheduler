@@ -114,6 +114,9 @@ app.delete("/api/students/:id", function(req, res) {
       handleError(res, err.message, "Failed to delete student");
     } else {
       res.status(200).json(req.params.id);
+      
+      var futureDate = new Date();
+      db.collection(LESSONS_COLLECTION).remove({_id: new ObjectID(req.params.id), lessonDate: {$gt : futureDate}});
     }
   });
 });

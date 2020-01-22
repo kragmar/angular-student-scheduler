@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Student } from '../services/student';
-//import { DbService } from '../services/db.service';
 import { StudentsService } from '../services/students.service';
 import { SaveDialogComponent } from '../save-dialog/save-dialog.component';
 
@@ -21,7 +20,6 @@ export class StudentsComponent implements OnInit {
   showVarNew: boolean;
   showVarDelete: boolean;
 
-  //constructor(private dbService: DbService) { }
   constructor(private studentsService: StudentsService, private dialog: MatDialog) { }
 
   ngOnInit() {
@@ -68,6 +66,7 @@ export class StudentsComponent implements OnInit {
   }
 
   toggleDelete(): void {
+    this.getStudents();
     this.showVarDelete = true;
     this.showVarNew = false;
     this.showVarSearch = false;
