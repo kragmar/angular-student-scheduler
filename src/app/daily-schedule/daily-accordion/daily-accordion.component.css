@@ -26,10 +26,11 @@
     margin: .1em 0;
 }
 
-::ng-deep .mat-expansion-panel-header:hover,
-::ng-deep .mat-expansion-panel-header:active,
-::ng-deep .mat-expansion-panel-header:focus {
-    background-color: #bbb;
+.mat-expansion-panel-header.mat-expanded:hover,
+.mat-expansion-panel-header.mat-expanded:active,
+.mat-expansion-panel-header.mat-expanded:focus,
+.mat-expansion-panel-header.mat-expanded {
+    background: #bbb;
 }
 
 table {
@@ -46,8 +47,12 @@ thead th {
 }
 
 tbody td {
-    border-right: .1em solid black;
+    border-left: .1em solid black;
     /*border-radius: .5em;
     box-shadow: 0 .1em .3em 0 #ccc;*/
     padding: .5em;
+}
+
+tbody td:last-child {
+  border-right: .1em solid black;
 }

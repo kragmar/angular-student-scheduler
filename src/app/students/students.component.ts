@@ -57,12 +57,14 @@ export class StudentsComponent implements OnInit {
     this.selected = {};
     this.showVarSearch = true;
     this.showVarNew = false;
+    this.showVarDelete = false;
   }
 
   toggleNew(): void {
     this.newStudent = {};
     this.showVarNew = true;
     this.showVarSearch = false;
+    this.showVarDelete = false;
   }
 
   toggleDelete(): void {
