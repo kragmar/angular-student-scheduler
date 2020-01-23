@@ -3,7 +3,6 @@ var path = require("path");
 var bodyParser = require("body-parser");
 var mongodb = require("mongodb");
 var ObjectID = mongodb.ObjectID;
-var async = require("async");
 
 var STUDENTS_COLLECTION = "students";
 var LESSONS_COLLECTION = "lessons";
@@ -112,30 +111,20 @@ app.put("/api/students/:id", function(req, res) {
 app.delete("/api/students/:id", function(req, res) {
   var id;
 
-  async.parallel([
-    function(callback) {
-      db.collection(STUDENTS_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
-        id = req.params.id;
-        /* if (err) {
-          handleError(res, err.message, "Failed to delete student");
-        } else {
-          res.status(200).json(req.params.id);
-        } */
-      });
-    },
-    function(callback) {
-      db.collection(LESSONS_COLLECTION).deleteMany({ "student._id": { $eq: id } }, function(err, result)
-      {
-        console.log("id: " + id);
-      });
-    }
-  ], function(err, result) {
-      if (err) {
-        handleError(res, err.message, "Failed to delete student");
-      } else {
-        res.status(200).json(req.params.id);
-      }
+  db.collection(STUDENTS_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
+    id = req.params.id;
+    /* if (err) {
+      handleError(res, err.message, "Failed to delete student");
+    } else {
+      res.status(200).json(req.params.id);
+    } */
   });
+  db.collection(LESSONS_COLLECTION).deleteMany({ "student._id": { $eq: id } }, function(err, result)
+  {
+    console.log(result);
+  });
+
+  res.status(200).json(req.params.id);
 
 });
 
