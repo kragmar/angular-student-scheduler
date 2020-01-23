@@ -112,7 +112,7 @@ app.delete("/api/students/:id", function(req, res) {
   var id;
 
   db.collection(STUDENTS_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
-    id = new ObjectID(req.params.id);
+    id = req.params.id;
     if (err) {
       handleError(res, err.message, "Failed to delete student");
     } else {
