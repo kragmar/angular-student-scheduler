@@ -126,7 +126,6 @@ app.delete("/api/students/:id", function(req, res) {
   });
   db.collection(LESSONS_COLLECTION).deleteMany({"student._id": {$eq: id}}, function(err, result)
   {
-    res.status(200).json(req.params.id);
     console.log("NAEZ");
   });
 
