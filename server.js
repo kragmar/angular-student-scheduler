@@ -125,7 +125,7 @@ app.delete("/api/students/:id", function(req, res) {
 
     }
   });
-  db.collection(LESSONS_COLLECTION).deleteMany({student: {_id: new ObjectID("5e29a289db3de60004ab9b93")}}, function(err, result)
+  db.collection(LESSONS_COLLECTION).deleteMany({lessonStart: "17:00"}, function(err, result)
   {
     console.log("NAEZ");
   });
