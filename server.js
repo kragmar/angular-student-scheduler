@@ -124,7 +124,7 @@ app.delete("/api/students/:id", function(req, res) {
 
     }
   });
-  db.collection(LESSONS_COLLECTION).deleteMany({ "student._id": id }, function(err, result)
+  db.collection(LESSONS_COLLECTION).deleteMany({ student: { _id: id } }, function(err, result)
   {
     console.log("id: " + id);
   });
