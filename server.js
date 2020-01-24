@@ -119,9 +119,9 @@ app.delete("/api/students/:id", function(req, res) {
       res.status(200).json(req.params.id);
     } */
   });
-  db.collection(LESSONS_COLLECTION).deleteMany({ "student._id": id }, function(err, result)
+  db.collection(LESSONS_COLLECTION).deleteMany({ "lessonStart": "17:00" }, function(err, result)
   {
-    console.log(result.acknowledged + " " + result.deletedCount);
+    console.log("deletedCount: " + result.deletedCount);
   });
 
   res.status(200).json(req.params.id);
