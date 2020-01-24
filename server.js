@@ -110,6 +110,7 @@ app.put("/api/students/:id", function(req, res) {
 
 app.delete("/api/students/:id", function(req, res) {
   var id;
+  var resultLog;
 
   db.collection(STUDENTS_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
     id = req.params.id;
@@ -121,10 +122,10 @@ app.delete("/api/students/:id", function(req, res) {
   });
   db.collection(LESSONS_COLLECTION).deleteMany({ "student._id": id }, function(err, result)
   {
-    console.log(result);
+    resultLog = result;
   });
 
-  res.status(200).json(req.params.id);
+  res.status(200).json(req.params.id, resultLog);
 
 });
 
