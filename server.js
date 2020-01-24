@@ -125,7 +125,7 @@ app.delete("/api/students/:id", function(req, res) {
     resultLog = result;
   });
 
-  res.status(200).json(req.params.id, resultLog);
+  res.status(200).json(resultLog);
 
 });
 
