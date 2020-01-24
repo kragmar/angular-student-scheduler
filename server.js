@@ -110,10 +110,9 @@ app.put("/api/students/:id", function(req, res) {
 
 app.delete("/api/students/:id", function(req, res) {
   var id;
-  var resultLog;
 
   db.collection(STUDENTS_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
-    id = req.params.id;
+    id = new ObjectID(req.params.id);
     /* if (err) {
       handleError(res, err.message, "Failed to delete student");
     } else {
@@ -122,10 +121,10 @@ app.delete("/api/students/:id", function(req, res) {
   });
   db.collection(LESSONS_COLLECTION).deleteMany({ "student._id": id }, function(err, result)
   {
-    resultLog = result;
+    console.log(result.acknowledged + " " + result.deletedCount);
   });
 
-  res.status(200).json(resultLog);
+  res.status(200).json(req.params.id);
 
 });
 
