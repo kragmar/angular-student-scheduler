@@ -14,7 +14,7 @@ export class StudentsComponent implements OnInit {
 
   students: Student[];
   selected: any = {};
-  newStudent: Student;
+  newStudent: any = {};
 
   showVarSearch: boolean;
   showVarNew: boolean;
