@@ -109,10 +109,8 @@ app.put("/api/students/:id", function(req, res) {
 });
 
 app.delete("/api/students/:id", function(req, res) {
-  var id;
-
+  
   db.collection(STUDENTS_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
-    id = new ObjectID(req.params.id);
     /* if (err) {
       handleError(res, err.message, "Failed to delete student");
     } else {
@@ -120,8 +118,8 @@ app.delete("/api/students/:id", function(req, res) {
     } */
   });
 
-  var v = "Tanuló Törlés";
-  db.collection(LESSONS_COLLECTION).deleteMany({ "student.name": v }, function(err, result)
+  var id = new ObjectID(req.params.id);
+  db.collection(LESSONS_COLLECTION).deleteMany({ "student._id": new ObjectID(req.params.id) }, function(err, result)
   {
     console.log("deletedCount: " + result.deletedCount);
   });
