@@ -119,7 +119,7 @@ app.delete("/api/students/:id", function(req, res) {
   });
 
   var id = new ObjectID(req.params.id);
-  db.collection(LESSONS_COLLECTION).deleteMany({ "student._id": new ObjectID(req.params.id) }, function(err, result)
+  db.collection(LESSONS_COLLECTION).deleteMany({ "student.id": new ObjectID(req.params.id) }, function(err, result)
   {
     console.log("deletedCount: " + result.deletedCount);
   });
