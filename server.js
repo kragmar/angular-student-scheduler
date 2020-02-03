@@ -118,9 +118,11 @@ app.delete("/api/students/:id", function(req, res) {
     } */
   });
 
-  db.collection(LESSONS_COLLECTION).deleteMany({ "student._id": req.params.id, "lessonDate": { $gt: "2020-02-03" } }, function(err, result)
+  var date = new Date();
+  var today = date.getFullYear() + "-" + date.getMonth() + "-0" + date.getDay();
+  db.collection(LESSONS_COLLECTION).deleteMany({ "student._id": req.params.id, "lessonDate": { $gt: today } }, function(err, result)
   {
-    console.log("deletedCount: " + result.deletedCount);
+    console.log("deletedCount: " + result.deletedCount + " " + today);
   });
 
   res.status(200).json(req.params.id);
