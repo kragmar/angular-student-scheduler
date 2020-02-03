@@ -119,7 +119,7 @@ app.delete("/api/students/:id", function(req, res) {
   });
 
   var date = new Date();
-  var today = date.getFullYear() + "-" + date.getMonth() + "-0" + date.getDay();
+  var today = date.getFullYear() + "-0" + date.getMonth() + "-0" + date.getDate();
   db.collection(LESSONS_COLLECTION).deleteMany({ "student._id": req.params.id, "lessonDate": { $gt: today } }, function(err, result)
   {
     console.log("deletedCount: " + result.deletedCount + " " + today);
