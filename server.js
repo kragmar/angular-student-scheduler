@@ -118,7 +118,7 @@ app.delete("/api/students/:id", function(req, res) {
     } */
   });
 
-  db.collection(LESSONS_COLLECTION).deleteMany({ "student._id": req.params.id, "lessonDate": "2020-02-03" }, function(err, result)
+  db.collection(LESSONS_COLLECTION).deleteMany({ "student._id": req.params.id, "lessonDate": { $gt: "2020-02-03" } }, function(err, result)
   {
     console.log("deletedCount: " + result.deletedCount);
   });
