@@ -24,9 +24,9 @@ export class LessonsService {
                     );
   }
 
-  // get("/api/lessons/students/:id")
-  getLessonsByStudentId(studentId: Student): Observable<Lesson[]> {
-    const url = this.lessonsUrl + '/students/' + studentId._id;
+  // get("/api/lessons/:studentid")
+  getLessonsByStudentId(student: Student): Observable<Lesson[]> {
+    const url = this.lessonsUrl + '/' + student._id;
     return this.http.get<Lesson[]>(url)
                     .pipe(
                       catchError(this.handleError<Lesson[]>('getLessons', []))

@@ -29,7 +29,6 @@ export class StudentsComponent implements OnInit {
 
   ngOnInit() {
     this.getStudents();
-    this.getLessonsByStudentId();
   }
 
   getStudents(): void {
@@ -83,6 +82,7 @@ export class StudentsComponent implements OnInit {
   }
 
   toggleLessonSettings(): void {
+    this.getLessonsByStudentId();
     this.showVarLesson = true;
   }
 

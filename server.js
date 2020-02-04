@@ -200,12 +200,12 @@ app.delete("/api/lessons/:id", function(req, res) {
   });
 });
 
-/*  "/api/lessons/students/:id"
+/*  "/api/lessons/:studentid"
  *    GET: find lessons by student id
  */
 
-app.get("/api/lessons/students/:id", function(req, res) {
-  db.collection(LESSONS_COLLECTION).find({ "student._id": new ObjectID(req.params.id) }).toArray(function(err, doc) {
+app.get("/api/lessons/:studentid", function(req, res) {
+  db.collection(LESSONS_COLLECTION).find({ "student._id": new ObjectID(req.params.studentid) }).toArray(function(err, doc) {
     if (err) {
       handleError(res, err.message, "Failed to get lesson");
     } else {
