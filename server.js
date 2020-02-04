@@ -209,7 +209,6 @@ app.get("/api/lessons/student/:id", function(req, res) {
     if (err) {
       handleError(res, err.message, "Failed to get lesson");
     } else {
-      console.log(doc)
       res.status(200).json(doc);
     }
   });
