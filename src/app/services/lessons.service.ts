@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Lesson } from './lesson';
+import { Student } from './student';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -18,6 +19,15 @@ export class LessonsService {
   // get("/api/lessons")
   getLessons(): Observable<Lesson[]> {
     return this.http.get<Lesson[]>(this.lessonsUrl)
+                    .pipe(
+                      catchError(this.handleError<Lesson[]>('getLessons', []))
+                    );
+  }
+
+  // get("/api/lessons/students/:id")
+  getLessonsByStudentId(studentId: Student): Observable<Lesson[]> {
+    const url = this.lessonsUrl + '/students/' + studentId._id;
+    return this.http.get<Lesson[]>(url)
                     .pipe(
                       catchError(this.handleError<Lesson[]>('getLessons', []))
                     );

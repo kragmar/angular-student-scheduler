@@ -11,7 +11,7 @@
               <mat-option *ngFor="let student of students" [value]="student">{{ student.name }}</mat-option>
           </mat-select>
       </mat-form-field>
-      <!-- <ng-container *ngIf="searchLesson"> -->
+      <ng-container *ngIf="searchLesson">
           <form #form="ngForm" class="student-layout__result" (ngSubmit)="save()">
               <mat-form-field>
                   <input matInput placeholder="Tanuló neve" [(ngModel)]="searchLesson.name" name="name" required>
@@ -37,10 +37,16 @@
               </mat-form-field>
             </ng-container>
             <ng-template #showDisabledLesson>
-              
+              <mat-accordion>
+                <mat-expansion-panel *ngFor="let lesson of lessons">
+                  <mat-expansion-panel-header>
+                    {{ lesson.lessonDate }} | {{ lesson.lessonStart }}
+                  </mat-expansion-panel-header>
+                </mat-expansion-panel>
+              </mat-accordion>
             </ng-template>
           </div>
-      <!-- </ng-container> -->
+      </ng-container>
     </ng-container>
     <ng-template #showVarFalse>
       <ng-container *ngIf="showVarNew">

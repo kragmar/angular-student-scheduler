@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Student } from '../services/student';
+import { Lesson } from '../services/lesson';
 import { StudentsService } from '../services/students.service';
+import { LessonsService } from '../services/lessons.service';
 import { SaveDialogComponent } from '../save-dialog/save-dialog.component';
 
 import { MatDialog } from '@angular/material';
@@ -16,12 +18,14 @@ export class StudentsComponent implements OnInit {
   searchLesson: Student;
   newStudent: any = {};
 
+  lessons: Lesson[];
+
   showVarSearch: boolean;
   showVarNew: boolean;
   showVarDelete: boolean;
   showVarLesson: boolean;
 
-  constructor(private studentsService: StudentsService, private dialog: MatDialog) { }
+  constructor(private studentsService: StudentsService, private lessonsService: LessonsService, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.getStudents();
@@ -30,6 +34,11 @@ export class StudentsComponent implements OnInit {
   getStudents(): void {
     this.studentsService.getStudents()
                         .subscribe(students => this.students = students);
+  }
+  
+  getLessons(): void {
+    this.lessonsService.getLessonsByStudentId(this.searchLesson)
+                       .subscribe(lessons => this.lessons = lessons);
   }
 
   add(): void {

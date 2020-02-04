@@ -199,3 +199,17 @@ app.delete("/api/lessons/:id", function(req, res) {
     }
   });
 });
+
+/*  "/api/lessons/students/:id"
+ *    GET: find lessons by student id
+ */
+
+app.get("/api/lessons/students/:id", function(req, res) {
+  db.collection(LESSONS_COLLECTION).find({ "student._id": new ObjectID(req.params.id) }).toArray(function(err, doc) {
+    if (err) {
+      handleError(res, err.message, "Failed to get lesson");
+    } else {
+      res.status(200).json(doc);
+    }
+  });
+});
