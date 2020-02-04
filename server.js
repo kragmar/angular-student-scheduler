@@ -200,11 +200,11 @@ app.delete("/api/lessons/:id", function(req, res) {
   });
 });
 
-/*  "/api/lessons/:studentid"
+/*  "/api/lessons/student/:id"
  *    GET: find lessons by student id
  */
 
-app.get("/api/lessons/:studentid", function(req, res) {
+app.get("/api/lessons/student/:id", function(req, res) {
   db.collection(LESSONS_COLLECTION).find({ "student._id": new ObjectID(req.params.studentid) }).toArray(function(err, doc) {
     if (err) {
       handleError(res, err.message, "Failed to get lesson");
