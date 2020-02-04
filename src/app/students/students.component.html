@@ -35,7 +35,9 @@
               <mat-accordion>
                 <mat-expansion-panel *ngFor="let lesson of lessons">
                   <mat-expansion-panel-header>
-                    {{ lesson.lessonDate }} | {{ lesson.lessonStart }}
+                    <mat-panel-title>
+                      ASD{{ lesson.lessonDate }} | {{ lesson.lessonStart }}
+                    </mat-panel-title>
                   </mat-expansion-panel-header>
                 </mat-expansion-panel>
               </mat-accordion>
@@ -44,7 +46,9 @@
               <mat-accordion>
                 <mat-expansion-panel *ngFor="let lesson of lessons">
                   <mat-expansion-panel-header>
-                    {{ lesson.lessonDate }} | {{ lesson.lessonStart }}
+                    <mat-panel-title>
+                      ASD{{ lesson.lessonDate }} | {{ lesson.lessonStart }}
+                    </mat-panel-title>
                   </mat-expansion-panel-header>
                 </mat-expansion-panel>
               </mat-accordion>
