@@ -1,33 +1,46 @@
 <div class="student-layout">
     <div class="student-layout__buttons">
-      <button mat-button type="button" class="student-btn" (click)="toggleSearch()">Keresés</button>
-      <button mat-button type="button" class="student-btn" (click)="toggleNew()">Új tanuló</button>
-      <button mat-button type="button" class="student-btn" (click)="toggleDelete()">Törlés</button>
+      <button mat-raised-button class="student-btn" (click)="toggleSearch()">Keresés</button>
+      <button mat-raised-button class="student-btn" (click)="toggleNew()">Új tanuló</button>
+      <button mat-raised-button class="student-btn" (click)="toggleDelete()">Törlés</button>
     </div>
     <ng-container *ngIf="showVarSearch; else showVarFalse">
       <mat-form-field class="student-layout__form">
           <mat-label>Tanuló neve</mat-label>
-          <mat-select [(ngModel)]="selected">
+          <mat-select [(ngModel)]="searchLesson">
               <mat-option *ngFor="let student of students" [value]="student">{{ student.name }}</mat-option>
           </mat-select>
       </mat-form-field>
-      <ng-container *ngIf="selected">
+      <!-- <ng-container *ngIf="searchLesson"> -->
           <form #form="ngForm" class="student-layout__result" (ngSubmit)="save()">
               <mat-form-field>
-                  <input matInput placeholder="Tanuló neve" [(ngModel)]="selected.name" name="name" required>
+                  <input matInput placeholder="Tanuló neve" [(ngModel)]="searchLesson.name" name="name" required>
               </mat-form-field>
               <mat-form-field>
-                  <input matInput placeholder="Email címe" [(ngModel)]="selected.email" name="email" required>
+                  <input matInput placeholder="Email címe" [(ngModel)]="searchLesson.email" name="email" required>
               </mat-form-field>
               <mat-form-field>
-                  <input matInput placeholder="Telefonszáma" [(ngModel)]="selected.telNum" name="telnum" required>
+                  <input matInput placeholder="Telefonszáma" [(ngModel)]="searchLesson.telNum" name="telnum" required>
               </mat-form-field>
               <mat-form-field>
-                  <input matInput placeholder="Születési dátuma" [(ngModel)]="selected.birthDate" name="birthdate" required>
+                  <input matInput placeholder="Születési dátuma" [(ngModel)]="searchLesson.birthDate" name="birthdate" required>
               </mat-form-field>
-              <button class="result-btn" type="submit" mat-button (click)="openDialog()">Mentés</button> 
+              <button class="result-btn" mat-raised-button type="submit" (click)="openDialog()">Mentés</button> 
           </form>
-      </ng-container>
+          <div class="student-layout__lesson--btn">
+            <button mat-raised-button class="student-btn" (click)="toggleLessonSettings()">Módosítás</button>
+          </div>
+          <div class="student-layout__lesson">
+            <ng-container *ngIf="showVarLesson; else showDisabledLesson">
+              <mat-form-field>
+
+              </mat-form-field>
+            </ng-container>
+            <ng-template #showDisabledLesson>
+              
+            </ng-template>
+          </div>
+      <!-- </ng-container> -->
     </ng-container>
     <ng-template #showVarFalse>
       <ng-container *ngIf="showVarNew">
@@ -44,7 +57,7 @@
             <mat-form-field>
                 <input matInput placeholder="Születési dátuma" [(ngModel)]="newStudent.birthDate" name="birthdate" required>
             </mat-form-field>
-            <button class="result-btn" type="submit" mat-button (click)="openDialog()">Mentés</button> 
+            <button class="result-btn" type="submit" mat-raised-button (click)="openDialog()">Mentés</button> 
         </form>
       </ng-container>
     </ng-template>
@@ -69,7 +82,7 @@
               <mat-form-field>
                   <input matInput placeholder="Születési dátuma" [(ngModel)]="selected.birthDate" name="birthdate" disabled>
               </mat-form-field>
-              <button class="result-btn" type="submit" mat-button (click)="openDialog()">Törlés</button> 
+              <button class="result-btn" type="submit" mat-raised-button (click)="openDialog()">Törlés</button> 
           </form>
       </ng-container>
     </ng-container>

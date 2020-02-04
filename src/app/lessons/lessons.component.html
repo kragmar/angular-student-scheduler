@@ -1,7 +1,7 @@
 <div class="lesson-layout">
     <div class="lesson-layout__buttons">
-      <button mat-button type="button" class="lesson-btn" (click)="toggleNew()">Új óra</button>
-      <button mat-button type="button" class="lesson-btn" (click)="toggleDelete()">Törlés</button>
+      <button mat-raised-button type="button" class="lesson-btn" (click)="toggleNew()">Új óra</button>
+      <button mat-raised-button type="button" class="lesson-btn" (click)="toggleDelete()">Törlés</button>
     </div>
     <ng-container *ngIf="showVarNew; else showVarFalse">
       <form #form="ngForm" class="lesson-layout__new-lesson" (ngSubmit)="add()">
@@ -26,7 +26,7 @@
                   <mat-option *ngFor="let time of lessonTimes" [value]="time">{{ time }}</mat-option>
               </mat-select>
           </mat-form-field>
-          <button class="result-btn" type="submit" mat-button (click)="openDialog()">Mentés</button> 
+          <button class="result-btn" type="submit" mat-raised-button (click)="openDialog()">Mentés</button> 
       </form>
     </ng-container>
     <ng-template #showVarFalse>
@@ -51,7 +51,7 @@
                 <mat-form-field>
                     <input matInput placeholder="Óra időpontja" [(ngModel)]="delLesson.lessonStart" name="delTime" disabled>
                 </mat-form-field>
-                <button class="result-btn" type="submit" mat-button (click)="openDialog()">Törlés</button> 
+                <button class="result-btn" type="submit" mat-raised-button (click)="openDialog()">Törlés</button> 
             </form>
         </ng-container>
       </ng-container>

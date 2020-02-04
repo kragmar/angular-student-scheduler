@@ -13,12 +13,13 @@ import { MatDialog } from '@angular/material';
 export class StudentsComponent implements OnInit {
 
   students: Student[];
-  selected: any = {};
+  searchLesson: Student;
   newStudent: any = {};
 
   showVarSearch: boolean;
   showVarNew: boolean;
   showVarDelete: boolean;
+  showVarLesson: boolean;
 
   constructor(private studentsService: StudentsService, private dialog: MatDialog) { }
 
@@ -37,12 +38,12 @@ export class StudentsComponent implements OnInit {
   }
 
   save(): void {
-    this.studentsService.updateStudent(this.selected)
+    this.studentsService.updateStudent(this.searchLesson)
                         .subscribe(() => this.showVarSearch = false);
   }
 
   delete(): void {
-    this.studentsService.deleteStudent(this.selected)
+    this.studentsService.deleteStudent(this.searchLesson)
                         .subscribe(() => this.showVarDelete = false);
   }
  
@@ -52,7 +53,6 @@ export class StudentsComponent implements OnInit {
 
   toggleSearch(): void {
     this.getStudents();
-    this.selected = {};
     this.showVarSearch = true;
     this.showVarNew = false;
     this.showVarDelete = false;
@@ -70,6 +70,10 @@ export class StudentsComponent implements OnInit {
     this.showVarDelete = true;
     this.showVarNew = false;
     this.showVarSearch = false;
+  }
+
+  toggleLessonSettings(): void {
+    this.showVarLesson = true;
   }
 
 }

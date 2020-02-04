@@ -9,7 +9,8 @@ import {
   MatSelectModule,
   MatFormFieldModule,
   MatIconModule,
-  MatDialogModule } from '@angular/material';
+  MatDialogModule,
+  MatButtonModule } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -57,7 +58,8 @@ import { LessonsService } from './services/lessons.service';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule
   ],
   entryComponents: [
     SaveDialogComponent
