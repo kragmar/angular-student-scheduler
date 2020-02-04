@@ -29,6 +29,7 @@ export class StudentsComponent implements OnInit {
 
   ngOnInit() {
     this.getStudents();
+    this.getLessonsByStudentId();
   }
 
   getStudents(): void {
@@ -36,7 +37,7 @@ export class StudentsComponent implements OnInit {
                         .subscribe(students => this.students = students);
   }
   
-  getLessons(): void {
+  getLessonsByStudentId(): void {
     this.lessonsService.getLessonsByStudentId(this.searchLesson)
                        .subscribe(lessons => this.lessons = lessons);
   }
