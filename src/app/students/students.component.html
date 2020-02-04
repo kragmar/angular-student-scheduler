@@ -32,9 +32,13 @@
           </div>
           <div class="student-layout__lesson">
             <ng-container *ngIf="showVarLesson; else showDisabledLesson">
-              <mat-form-field>
-
-              </mat-form-field>
+              <mat-accordion>
+                <mat-expansion-panel *ngFor="let lesson of lessons">
+                  <mat-expansion-panel-header>
+                    {{ lesson.lessonDate }} | {{ lesson.lessonStart }}
+                  </mat-expansion-panel-header>
+                </mat-expansion-panel>
+              </mat-accordion>
             </ng-container>
             <ng-template #showDisabledLesson>
               <mat-accordion>
