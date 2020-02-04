@@ -81,6 +81,11 @@ export class StudentsComponent implements OnInit {
     this.showVarSearch = false;
   }
 
+  toggleLessonView(): void {
+    this.getLessonsByStudentId();
+    this.showVarLesson = false;
+  }
+
   toggleLessonSettings(): void {
     this.getLessonsByStudentId();
     this.showVarLesson = true;

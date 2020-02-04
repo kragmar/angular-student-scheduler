@@ -7,7 +7,7 @@
     <ng-container *ngIf="showVarSearch; else showVarFalse">
       <mat-form-field class="student-layout__form">
           <mat-label>Tanuló neve</mat-label>
-          <mat-select [(ngModel)]="searchLesson" (selectionChange)="showVarLesson = false">
+          <mat-select [(ngModel)]="searchLesson" (selectionChange)="toggleLessonView()">
               <mat-option *ngFor="let student of students" [value]="student">{{ student.name }}</mat-option>
           </mat-select>
       </mat-form-field>
