@@ -7,7 +7,7 @@
     <ng-container *ngIf="showVarSearch; else showVarFalse">
       <mat-form-field class="student-layout__form">
           <mat-label>Tanuló neve</mat-label>
-          <mat-select [(ngModel)]="searchLesson">
+          <mat-select [(ngModel)]="searchLesson" (selectionChange)="showVarLesson = false">
               <mat-option *ngFor="let student of students" [value]="student">{{ student.name }}</mat-option>
           </mat-select>
       </mat-form-field>
@@ -36,7 +36,7 @@
                 <mat-expansion-panel *ngFor="let lesson of lessons">
                   <mat-expansion-panel-header>
                     <mat-panel-title>
-                      ASD{{ lesson.lessonDate }} | {{ lesson.lessonStart }}
+                      {{ lesson.lessonDate }} | {{ lesson.lessonStart }}
                     </mat-panel-title>
                   </mat-expansion-panel-header>
                 </mat-expansion-panel>
@@ -47,7 +47,7 @@
                 <mat-expansion-panel *ngFor="let lesson of lessons">
                   <mat-expansion-panel-header>
                     <mat-panel-title>
-                      ASD{{ lesson.lessonDate }} | {{ lesson.lessonStart }}
+                      {{ lesson.lessonDate }} | {{ lesson.lessonStart }}
                     </mat-panel-title>
                   </mat-expansion-panel-header>
                 </mat-expansion-panel>
