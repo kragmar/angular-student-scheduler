@@ -29,6 +29,7 @@
           </form>
           <div class="student-layout__lesson--btn">
             <button mat-raised-button class="student-btn" (click)="toggleLessonSettings()">Módosítás</button>
+            <button mat-raised-button class="student-btn" (click)="toggleLessonSettings()">Új óra</button>
           </div>
           <div class="student-layout__lesson">
             <ng-container *ngIf="showVarLesson; else showDisabledLesson">
@@ -38,6 +39,9 @@
                     <mat-panel-title>
                       {{ lesson.lessonDate }} | {{ lesson.lessonStart }}
                     </mat-panel-title>
+                    <mat-panel-description>
+                      Órák száma: {{ lessons.length }}
+                    </mat-panel-description>
                   </mat-expansion-panel-header>
                 </mat-expansion-panel>
               </mat-accordion>
@@ -50,6 +54,7 @@
                       {{ lesson.lessonDate }} | {{ lesson.lessonStart }}
                     </mat-panel-title>
                   </mat-expansion-panel-header>
+
                 </mat-expansion-panel>
               </mat-accordion>
             </ng-template>
