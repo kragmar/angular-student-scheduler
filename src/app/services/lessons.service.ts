@@ -42,7 +42,7 @@ export class LessonsService {
   }
 
   // post("/api/lessons/student/:id")
-  createLessonsByStudentId(newLesson: Lesson[]): Observable<Lesson> {
+  createLessonsByStudentId(newLesson: Lesson[]): Observable<Lesson[]> {
     return this.http.post<Lesson[]>(this.lessonsUrl, newLesson, this.httpOptions)
                     .pipe(
                       catchError(this.handleError<Lesson>('createLesson'))
