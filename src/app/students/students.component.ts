@@ -15,7 +15,7 @@ import { MatDialog } from '@angular/material';
 export class StudentsComponent implements OnInit {
 
   students: Student[];
-  searchLesson: any = {};
+  searchLesson: Student;
   newStudent: any = {};
 
   lessons: Lesson[];
@@ -61,7 +61,6 @@ export class StudentsComponent implements OnInit {
   }
 
   toggleSearch(): void {
-    this.searchLesson = {};
     this.getStudents();
     this.showVarSearch = true;
     this.showVarNew = false;
