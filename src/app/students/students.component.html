@@ -32,6 +32,7 @@
             <button mat-raised-button class="student-btn" (click)="toggleNewLessons()">Új óra</button>
           </div>
           <div class="student-layout__lesson">
+
             <ng-container *ngIf="showVarLessons; else showDisabledLesson">
               <mat-accordion>
                 <mat-expansion-panel *ngFor="let lesson of lessons">
@@ -46,8 +47,9 @@
                 </mat-expansion-panel>
               </mat-accordion>
             </ng-container>
+
             <ng-template #showDisabledLesson>
-              <ng-container *ngIf="showVarLessons === false; else showNewLessons">
+              <ng-container *ngIf="!showVarLessons; else showNewLessons">
                 <mat-accordion>
                   <mat-expansion-panel *ngFor="let lesson of lessons">
                     <mat-expansion-panel-header>
@@ -61,6 +63,7 @@
                   </mat-expansion-panel>
                 </mat-accordion>
               </ng-container>
+
               <ng-template #showNewLessons>
                 <form #form="ngForm" class="student-layout__lesson-new" (ngSubmit)="addMany()">
                   <mat-form-field>
@@ -87,7 +90,9 @@
                   <button class="student-btn" type="submit" mat-raised-button (click)="openDialog()">Mentés</button> 
                 </form>
               </ng-template>
+
             </ng-template>
+
           </div>
       </ng-container>
     </ng-container>
