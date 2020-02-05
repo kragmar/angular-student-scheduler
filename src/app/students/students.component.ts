@@ -20,6 +20,8 @@ export class StudentsComponent implements OnInit {
 
   lessons: Lesson[];
   newLesson: any = {};
+  lessonTimes: string[] = ["12:50", "13:40", "14:30", "15:20", "16:10", "17:00", "17:50", "18:40", "19:30"];
+  lessonTypes: string[] = ["Tanóra", "Gyakorló"];
 
   showVarSearch: boolean;
   showVarNew: boolean;
@@ -66,7 +68,7 @@ export class StudentsComponent implements OnInit {
 
   createLessons(): Lesson[] {
     this.newLesson.lessonDate = new Date(this.newLesson.lessonDate);
-    let newLessons;
+    let newLessons: Lesson[];
     newLessons.push(this.newLesson);
 
     for(let i = 0; i < 3; i++) {
