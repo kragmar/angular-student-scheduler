@@ -104,7 +104,7 @@ export class StudentsComponent implements OnInit {
 
   toggleLessonView(): void {
     this.getLessonsByStudentId();
-    this.showVarLessons = false;
+    this.showVarLessons = true;
   }
 
   toggleLessonSettings(): void {
