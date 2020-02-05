@@ -68,7 +68,7 @@ export class StudentsComponent implements OnInit {
 
   createLessons(): Lesson[] {
     this.newLesson.lessonDate = new Date(this.newLesson.lessonDate);
-    let newLessons: Lesson[];
+    let newLessons = new Array<Lesson>();
     newLessons.push(this.newLesson);
 
     for(let i = 0; i < 3; i++) {
