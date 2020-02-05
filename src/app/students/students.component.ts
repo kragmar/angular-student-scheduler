@@ -15,15 +15,18 @@ import { MatDialog } from '@angular/material';
 export class StudentsComponent implements OnInit {
 
   students: Student[];
-  searchLesson: Student;
+  searchStudent: Student;
   newStudent: any = {};
 
   lessons: Lesson[];
+  newLesson: Lesson;
 
   showVarSearch: boolean;
   showVarNew: boolean;
   showVarDelete: boolean;
-  showVarLesson: boolean;
+
+  showVarLessons: boolean;
+  showVarNewLesson: boolean;
 
   constructor(private studentsService: StudentsService, private lessonsService: LessonsService, private dialog: MatDialog) { }
 
@@ -37,7 +40,7 @@ export class StudentsComponent implements OnInit {
   }
   
   getLessonsByStudentId(): void {
-    this.lessonsService.getLessonsByStudentId(this.searchLesson)
+    this.lessonsService.getLessonsByStudentId(this.searchStudent)
                        .subscribe(lessons => this.lessons = lessons);
   }
 
@@ -46,14 +49,32 @@ export class StudentsComponent implements OnInit {
                         .subscribe(() => this.showVarNew = false);
   }
 
+  addMany(): void {
+    this.lessonsService.createLessonsByStudentId(this.createLessons())
+                       .subscribe(() => console.log("NOICE"));
+  }
+
   save(): void {
-    this.studentsService.updateStudent(this.searchLesson)
+    this.studentsService.updateStudent(this.searchStudent)
                         .subscribe(() => this.showVarSearch = false);
   }
 
   delete(): void {
-    this.studentsService.deleteStudent(this.searchLesson)
+    this.studentsService.deleteStudent(this.searchStudent)
                         .subscribe(() => this.showVarDelete = false);
+  }
+
+  createLessons(): Lesson[] {
+    this.newLesson.lessonDate = new Date(this.newLesson.lessonDate);
+    let newLessons;
+    newLessons.push(this.newLesson);
+
+    for(let i = 0; i < 3; i++) {
+      this.newLesson.lessonDate.setDate(this.newLesson.lessonDate.getDate() + 7);
+      newLessons.push(this.newLesson);
+    }
+
+    return newLessons;
   }
  
   openDialog(): void {
@@ -83,12 +104,17 @@ export class StudentsComponent implements OnInit {
 
   toggleLessonView(): void {
     this.getLessonsByStudentId();
-    this.showVarLesson = false;
+    this.showVarLessons = false;
   }
 
   toggleLessonSettings(): void {
     this.getLessonsByStudentId();
-    this.showVarLesson = true;
+    this.showVarLessons = true;
+  }
+
+  toggleNewLessons(): void {
+    this.showVarNewLesson = true;
+    this.showVarLessons = false;
   }
 
 }

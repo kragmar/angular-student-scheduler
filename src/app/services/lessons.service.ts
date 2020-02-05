@@ -41,6 +41,14 @@ export class LessonsService {
                     );
   }
 
+  // post("/api/lessons/student/:id")
+  createLessonsByStudentId(newLesson: Lesson[]): Observable<Lesson> {
+    return this.http.post<Lesson[]>(this.lessonsUrl, newLesson, this.httpOptions)
+                    .pipe(
+                      catchError(this.handleError<Lesson>('createLesson'))
+                    );
+  }
+
   // delete("/api/lessons/:id")
   deleteLesson(delLesson: Lesson): Observable<Lesson> {
     const url = this.lessonsUrl + '/' + delLesson._id;

@@ -200,8 +200,10 @@ app.delete("/api/lessons/:id", function(req, res) {
   });
 });
 
-/*  "/api/lessons/student/:id"
+/*    CUSTOM API OPERATIONS FOR LESSONS BY STUDENT ID
+ *    "/api/lessons/student/:id"
  *    GET: find lessons by student id
+ *    POST: creates multiple new lessons
  */
 
 app.get("/api/lessons/student/:id", function(req, res) {
@@ -210,6 +212,19 @@ app.get("/api/lessons/student/:id", function(req, res) {
       handleError(res, err.message, "Failed to get lesson");
     } else {
       res.status(200).json(doc);
+    }
+  });
+});
+
+app.post("/api/lessons/student/:id", function(req, res) {
+  var newLesson = req.body;
+  /* newLesson.createDate = new Date(); */
+
+  db.collection(LESSONS_COLLECTION).insertMany(newLesson, function(err, doc) {
+    if (err) {
+      handleError(res, err.message, "Failed to create new lesson.");
+    } else {
+      res.status(201).json(doc.ops[0]);
     }
   });
 });
