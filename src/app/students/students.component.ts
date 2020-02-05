@@ -19,7 +19,7 @@ export class StudentsComponent implements OnInit {
   newStudent: any = {};
 
   lessons: Lesson[];
-  newLesson: Lesson;
+  newLesson: any = {};
 
   showVarSearch: boolean;
   showVarNew: boolean;
