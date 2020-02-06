@@ -218,19 +218,13 @@ app.get("/api/lessons/student/:id", function(req, res) {
 });
 
 app.post("/api/lessons/student/:id", function(req, res) {
-  var newLesson = req.body;
-  var lessonArr = [];
+  var newLessons = req.body;
 
-  newLesson.createDate = new Date();
-
-  for(var i = 0; i < 3; i++) {
-    var date = new Date(newLesson.lessonDate);
-    newLesson.lessonDate = date.setDate(date.getDate() + (i * 7));
-    console.log(newLesson.lessonDate);
-    lessonArr.push(newLesson);
+  for(var i = 0; i < newLessons.length; i++) {
+    newLessons[i].createDate = new Date();
   }
 
-  db.collection(LESSONS_COLLECTION).insertMany(lessonArr, function(err, doc) {
+  db.collection(LESSONS_COLLECTION).insertMany(newLessons, function(err, doc) {
     if (err) {
       handleError(res, err.message, "Failed to create new lesson.");
     } else {

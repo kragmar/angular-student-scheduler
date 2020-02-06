@@ -52,7 +52,7 @@ export class StudentsComponent implements OnInit {
   }
 
   addMany(): void {
-    this.lessonsService.createLessonsByStudentId(this.newLesson)
+    this.lessonsService.createLessonsByStudentId(this.createLessons())
                        .subscribe(() => this.showVarNewLesson = false);
   }
 
@@ -72,7 +72,8 @@ export class StudentsComponent implements OnInit {
     newLessons.push(this.newLesson);
 
     for(let i = 0; i < 3; i++) {
-      this.newLesson.lessonDate.setDate(this.newLesson.lessonDate.getDate() + 7);
+      let date = this.newLesson.lessonDate;
+      this.newLesson.lessonDate.setDate(date.getDate() + 7);
       newLessons.push(this.newLesson);
       console.log(newLessons[i].lessonDate + " ");
     }
