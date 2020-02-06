@@ -149,6 +149,7 @@ app.get("/api/lessons", function(req, res) {
 
 app.post("/api/lessons", function(req, res) {
   var newLesson = req.body;
+  newLesson.lessonDate = new Date(newLesson.lessonDate);
   newLesson.createDate = new Date();
 
   db.collection(LESSONS_COLLECTION).insertOne(newLesson, function(err, doc) {
