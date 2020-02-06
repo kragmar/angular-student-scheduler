@@ -28,7 +28,6 @@ export class TableComponent implements OnInit {
 
   datepickerDate: Date;
 
-  //constructor(private dbService: DbService) { }
   constructor(private lessonsService: LessonsService, private studentsService: StudentsService) {
     //setInterval(() => {this.today = new Date()}, 30000);
   }
@@ -130,17 +129,11 @@ export class TableComponent implements OnInit {
   }
 
   setRow(lesson: Lesson, date: Date): Lesson[] {
-    let lessonDate = new Date(lesson.lessonDate);
-    if(lessonDate.getDate() == date.getDate()) {
+    /* let lessonDate = new Date(lesson.lessonDate); */
+    if(lesson.lessonDate.getDate() == date.getDate()) {
       return new Array<Lesson>(lesson);
     }
     return ;
   }
-
-  // WIP POST
-  /* addLesson(): void {
-    this.weeklyService.addLesson(this.lesson)
-      .subscribe( lesson => this.lesson = lesson);
-  } */
 
 }
