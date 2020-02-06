@@ -74,6 +74,7 @@ export class StudentsComponent implements OnInit {
     for(let i = 0; i < 3; i++) {
       this.newLesson.lessonDate.setDate(this.newLesson.lessonDate.getDate() + 7);
       newLessons.push(this.newLesson);
+      console.log(newLessons[i].lessonDate + " ");
     }
 
     return newLessons;

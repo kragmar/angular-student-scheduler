@@ -219,7 +219,10 @@ app.get("/api/lessons/student/:id", function(req, res) {
 
 app.post("/api/lessons/student/:id", function(req, res) {
   var newLesson = req.body;
-  /* newLesson.createDate = new Date(); */
+  for(var i = 0; i < newLesson.length; i++) {
+    newLesson[i].lessonDate = new Date(newLesson[i].lessonDate);
+    newLesson[i].createDate = new Date();
+  }
 
   db.collection(LESSONS_COLLECTION).insertMany(newLesson, function(err, doc) {
     if (err) {
