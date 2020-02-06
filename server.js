@@ -224,12 +224,12 @@ app.post("/api/lessons/student/:id", function(req, res) {
     newLessons[i].createDate = new Date();
   }
 
-  db.collection(LESSONS_COLLECTION).insertMany(newLessons, function(err, doc) {
+  db.collection(LESSONS_COLLECTION).insert(newLessons, function(err, doc) {
     if (err) {
       handleError(res, err.message, "Failed to create new lesson.");
     } else {
       console.log(doc);
-      res.status(201).json(doc.ops[0]);
+      res.status(201).json(doc);
     }
   });
 });
