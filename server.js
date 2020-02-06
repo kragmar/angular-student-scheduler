@@ -219,14 +219,13 @@ app.get("/api/lessons/student/:id", function(req, res) {
 
 app.post("/api/lessons/student/:id", function(req, res) {
   var newLesson = req.body;
-  newLesson.lessonDate = new Date(newLesson.lessonDate);
+  var lessonArr = [];
+
   newLesson.createDate = new Date();
 
-  var lessonArr = [];
-  lessonArr.push(newLesson);
-
   for(var i = 0; i < 3; i++) {
-    newLesson.lessonDate = newLesson.lessonDate.setDate(newLesson.lessonDate.getDate() + 7);
+    newLesson.lessonDate = new Date(newLesson.lessonDate + (i * 7));
+    console.log(newLesson.lessonDate);
     lessonArr.push(newLesson);
   }
 
