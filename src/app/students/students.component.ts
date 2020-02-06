@@ -67,14 +67,13 @@ export class StudentsComponent implements OnInit {
   }
 
   createLessons(): Lesson[] {
-    this.newLesson.lessonDate = new Date(this.newLesson.lessonDate);
-    let newLessons = new Array<Lesson>();
-    newLessons.push(this.newLesson);
+    let lesson = this.newLesson;
+    lesson.lessonDate = new Date(lesson.lessonDate);
+    let newLessons = [];
 
     for(let i = 0; i < 3; i++) {
-      let date = this.newLesson.lessonDate;
-      this.newLesson.lessonDate.setDate(date.getDate() + 7);
-      newLessons.push(this.newLesson);
+      newLessons.push(lesson);
+      newLessons[i].lessonDate.setDate(newLessons[i].lessonDate.getDate() + (i * 7));
     }
     console.log(newLessons[0].lessonDate + " " + newLessons[1].lessonDate + " ");
     return newLessons;
