@@ -52,8 +52,8 @@ export class StudentsComponent implements OnInit {
   }
 
   addMany(): void {
-    this.lessonsService.createLessonsByStudentId(this.createLessons())
-                       .subscribe(() => console.log("NOICE"));
+    this.lessonsService.createLessonsByStudentId(this.newLesson)
+                       .subscribe(() => this.showVarNewLesson = false);
   }
 
   save(): void {
