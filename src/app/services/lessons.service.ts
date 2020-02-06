@@ -42,11 +42,11 @@ export class LessonsService {
   }
 
   // post("/api/lessons/student/:id")
-  createLessonsByStudentId(newLesson: Lesson): Observable<Lesson> {
-    const url = this.lessonsUrl + '/student/' + newLesson.student._id;
-    return this.http.post<Lesson>(url, newLesson, this.httpOptions)
+  createLessonsByStudentId(newLesson: Lesson[]): Observable<Lesson[]> {
+    const url = this.lessonsUrl + '/student/' + newLesson[0].student._id;
+    return this.http.post<Lesson[]>(url, newLesson, this.httpOptions)
                     .pipe(
-                      catchError(this.handleError<Lesson>('createLesson'))
+                      catchError(this.handleError<Lesson[]>('createLesson'))
                     );
   }
 
