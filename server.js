@@ -224,7 +224,8 @@ app.post("/api/lessons/student/:id", function(req, res) {
   newLesson.createDate = new Date();
 
   for(var i = 0; i < 3; i++) {
-    newLesson.lessonDate = new Date(newLesson.lessonDate + (i * 7));
+    var date = new Date(newLesson.lessonDate);
+    newLesson.lessonDate = date.setDate(date.getDate() + (i * 7));
     console.log(newLesson.lessonDate);
     lessonArr.push(newLesson);
   }
