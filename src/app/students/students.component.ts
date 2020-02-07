@@ -78,7 +78,7 @@ export class StudentsComponent implements OnInit {
       console.log(lessonsArr[i].lessonDate);
       console.log(lessonsArr[0].lessonDate + " " + lessonsArr[1].lessonDate + " ");
     }
-    console.log(lessonsArr[0].lessonDate + " " + lessonsArr[1].lessonDate + " ");
+    console.log(lessonsArr[0].lessonDate);
     return lessonsArr;
   }
  
