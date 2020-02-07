@@ -70,6 +70,7 @@ export class StudentsComponent implements OnInit {
     this.newLesson.lessonDate = new Date(this.newLesson.lessonDate);
     let lesson = this.newLesson;
     let lessonsArr:Lesson[] = Array();
+    console.log(lessonsArr.push(lesson));
 
     for(let i = 0; i < 3; i++) {
       console.log(lessonsArr.push(lesson));
