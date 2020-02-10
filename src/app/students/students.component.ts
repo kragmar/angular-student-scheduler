@@ -51,8 +51,8 @@ export class StudentsComponent implements OnInit {
                         .subscribe(() => this.showVarNew = false);
   }
 
-  addMany(): void {
-    this.lessonsService.createLessonsByStudentId(this.createLessons())
+  addMany(newLesson: Lesson): void {
+    this.lessonsService.createLessonsByStudentId(this.createLessons(newLesson))
                        .subscribe(() => this.showVarNewLesson = false);
   }
 
@@ -87,7 +87,7 @@ export class StudentsComponent implements OnInit {
 
     return lessonsArr;
   }
- 
+
   openDialog(): void {
     const dialogRef = this.dialog.open(SaveDialogComponent, {panelClass: 'save-dialog-box'});
   }
