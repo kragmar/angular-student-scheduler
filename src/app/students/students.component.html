@@ -49,7 +49,7 @@
             </ng-container>
 
             <ng-container *ngIf="showVarNewLesson">
-              <form #form="ngForm" (ngSubmit)="addMany()">
+              <form #form="ngForm" (ngSubmit)="addMany(newLesson)">
                 <mat-form-field>
                     <mat-label>Tanuló neve</mat-label>
                     <mat-select [(ngModel)]="newLesson.student" name="name" required>
