@@ -28,6 +28,7 @@ import { StudentsComponent } from './students/students.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StudentsService } from './services/students.service';
 import { SaveDialogComponent } from './save-dialog/save-dialog.component';
+import { UpdateDialogComponent } from './update-dialog/update-dialog.component';
 import { LessonsComponent } from './lessons/lessons.component';
 import { LessonsService } from './services/lessons.service';
 
@@ -43,6 +44,7 @@ import { LessonsService } from './services/lessons.service';
     StudentsComponent,
     DashboardComponent,
     SaveDialogComponent,
+    UpdateDialogComponent,
     LessonsComponent
   ],
   imports: [
@@ -62,7 +64,8 @@ import { LessonsService } from './services/lessons.service';
     MatButtonModule
   ],
   entryComponents: [
-    SaveDialogComponent
+    SaveDialogComponent,
+    UpdateDialogComponent
   ],
   providers: [DbService, MatDatepickerModule, StudentsService, LessonsService],
   bootstrap: [AppComponent]
