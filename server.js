@@ -28,7 +28,7 @@ mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://drumkiller:Qay
   app.use(express.static(__dirname + '/dist/student-scheduler-client'));
 
   app.get('/*', function(req,res) {  
-    res.sendFile(path.join(__dirname+'/dist/student-scheduler-client/index.html'));
+    res.sendFile(path.join(__dirname + '/dist/student-scheduler-client/index.html'));
   });
 
   // Initialize the app.
