@@ -1,9 +1,23 @@
 .update-dialog {
-  display: flex;
+  display: grid;
+  grid-template-columns: .05fr 1fr;
+  grid-template-areas: 
+    "header header"
+    ". body";
   align-items: center;
-  font-size: 1.5em;
   color: #fff;
   padding: .5em;
+}
+
+.update-dialog__header {
+  grid-area: header;
+  font-size: 1.5em;
+  margin-bottom: .5em;
+}
+
+.update-dialog__body {
+  grid-area: body;
+  font-size: 1em;
 }
 
 i {
