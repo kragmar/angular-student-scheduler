@@ -67,19 +67,18 @@ export class StudentsComponent implements OnInit {
   }
 
   createLessons(lessonParam: Lesson): Lesson[] {
-    let lessonsArr: Lesson[] = [];
-    let date = new Date(lessonParam.lessonDate);
+    let lessonsArr = [];
 
     for(let i = 0; i < 3; i++) {
-      let lesson: any = {};
+      let lesson = {} as Lesson;
       lesson._id = lessonParam._id;
-      lesson.lessonDate = date;
+      lesson.lessonDate = lessonParam.lessonDate;
       lesson.lessonStart = lessonParam.lessonStart;
       lesson.lessonType = lessonParam.lessonType;
       lesson.student = lessonParam.student;
 
-      date.setDate(date.getDate() + (i * 7));
-      lesson.lessonDate = date;
+      lesson.lessonDate = new Date(lesson.lessonDate);
+      lesson.lessonDate.setDate(lesson.lessonDate.getDate() + (i * 7));
 
       lessonsArr.push(lesson);
       console.log(lessonsArr);
