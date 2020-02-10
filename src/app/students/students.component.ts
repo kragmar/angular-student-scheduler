@@ -67,7 +67,7 @@ export class StudentsComponent implements OnInit {
   }
 
   createLessons(): Lesson[] {
-    let lessonsArr: Lesson[];
+    let lessonsArr: Lesson[] = [];
 
     let date = new Date(this.newLesson.lessonDate);
     console.log(date);
