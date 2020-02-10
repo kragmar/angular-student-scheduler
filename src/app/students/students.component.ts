@@ -81,6 +81,7 @@ export class StudentsComponent implements OnInit {
       lesson.lessonDate = date;
       console.log(lesson);
       lessonsArr.push(lesson);
+      console.log(lessonsArr);
       for(let elem of lessonsArr) {
         console.log(elem.lessonDate);
       }
