@@ -67,7 +67,7 @@ export class StudentsComponent implements OnInit {
   }
 
   createLessons(): Lesson[] {
-    let lessonsArr = Array();
+    let lessonsArr: Lesson[];
 
     let date = new Date(this.newLesson.lessonDate);
     console.log(date);
@@ -79,6 +79,7 @@ export class StudentsComponent implements OnInit {
     for(let i = 0; i < 3; i++) {
       date.setDate(date.getDate() + (i * 7));
       lesson.lessonDate = date;
+      console.log(lesson);
       lessonsArr.push(lesson);
       for(let elem of lessonsArr) {
         console.log(elem.lessonDate);
