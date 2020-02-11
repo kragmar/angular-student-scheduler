@@ -102,6 +102,4 @@
   grid-area: lessons;
   display: flex;
   flex-direction: column;
-  border: .1em solid blue;
-  padding: 2em;
 }

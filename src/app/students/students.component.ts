@@ -75,7 +75,7 @@ export class StudentsComponent implements OnInit {
       lesson.lessonDate = lessonParam.lessonDate;
       lesson.lessonStart = lessonParam.lessonStart;
       lesson.lessonType = lessonParam.lessonType;
-      lesson.student = lessonParam.student;
+      lesson.student = this.searchStudent;
 
       lesson.lessonDate = new Date(lesson.lessonDate);
       lesson.lessonDate.setDate(lesson.lessonDate.getDate() + (i * 7));
