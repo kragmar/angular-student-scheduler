@@ -4,6 +4,8 @@
       <button mat-raised-button class="student-btn" (click)="toggleNew()">Új tanuló</button>
       <button mat-raised-button class="student-btn" (click)="toggleDelete()">Törlés</button>
     </div>
+
+    <!-- Searching amongst students -->
     <ng-container *ngIf="showVarSearch; else showVarFalse">
       <mat-form-field class="student-layout__form">
           <mat-label>Tanuló neve</mat-label>
@@ -33,21 +35,33 @@
           </div>
           <div class="student-layout__lesson">
 
+            <!-- Showing the student's lessons -->
             <ng-container *ngIf="showVarLessons">
               <mat-accordion>
-                <mat-expansion-panel *ngFor="let lesson of lessons">
+                <mat-expansion-panel *ngFor="let day of studentLessons.days">
                   <mat-expansion-panel-header>
-                    <mat-panel-title>
-                      {{ lesson.lessonDate | date : "y-MM-dd" }} | {{ lesson.lessonStart }}
-                    </mat-panel-title>
+                    <mat-expansion-panel-title>
+                      {{ day }}
+                    </mat-expansion-panel-title>
                     <mat-panel-description>
-                      Órák száma: {{ lessons.length }}
+                      Órák száma: {{ days.length }}
                     </mat-panel-description>
                   </mat-expansion-panel-header>
+                  <mat-expansion-panel *ngFor="let lesson of studentLessons.lessons">
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        {{ lesson.lessonDate | date : "y-MM-dd" }} | {{ lesson.lessonStart }}
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        Asd
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                  </mat-expansion-panel>
                 </mat-expansion-panel>
               </mat-accordion>
             </ng-container>
 
+            <!-- Adding new lessons to the student -->
             <ng-container *ngIf="showVarNewLesson">
               <form #form="ngForm" class="student-layout__lesson-new" (ngSubmit)="addMany(newLesson)">
                 <mat-form-field>
@@ -71,10 +85,11 @@
                 <button class="student-btn" type="submit" mat-raised-button (click)="openDialog()">Mentés</button> 
               </form>
             </ng-container>
-
           </div>
       </ng-container>
     </ng-container>
+
+    <!-- Adding new student -->
     <ng-template #showVarFalse>
       <ng-container *ngIf="showVarNew">
         <form #form="ngForm" class="student-layout__new-student" (ngSubmit)="add()">
@@ -94,6 +109,8 @@
         </form>
       </ng-container>
     </ng-template>
+
+    <!-- Deleting a student -->
     <ng-container *ngIf="showVarDelete">
       <mat-form-field class="student-layout__form">
           <mat-label>Tanuló neve</mat-label>

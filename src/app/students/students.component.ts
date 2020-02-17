@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Student } from '../services/student';
 import { Lesson } from '../services/lesson';
+import { LessonWithDay } from '../services/lesson-with-day';
 import { StudentsService } from '../services/students.service';
 import { LessonsService } from '../services/lessons.service';
 import { SaveDialogComponent } from '../save-dialog/save-dialog.component';
@@ -20,8 +21,10 @@ export class StudentsComponent implements OnInit {
 
   lessons: Lesson[];
   newLesson: any = {};
+  studentLessons: any = {};
   lessonTimes: string[] = ["12:50", "13:40", "14:30", "15:20", "16:10", "17:00", "17:50", "18:40", "19:30"];
   lessonTypes: string[] = ["Tanóra", "Gyakorló"];
+  lessonDays: any = {"1": "Hétfő", "2": "Kedd", "3": "Szerda", "4": "Csütörtök", "5": "Péntek"};
 
   showVarSearch: boolean;
   showVarNew: boolean;
@@ -43,7 +46,8 @@ export class StudentsComponent implements OnInit {
   
   getLessonsByStudentId(): void {
     this.lessonsService.getLessonsByStudentId(this.searchStudent)
-                       .subscribe(lessons => this.lessons = lessons);
+                       .subscribe(lessons => this.lessons = lessons,
+                                       () => this.getLessonWithDay);
   }
 
   add(): void {
@@ -81,10 +85,24 @@ export class StudentsComponent implements OnInit {
       lesson.lessonDate.setDate(lesson.lessonDate.getDate() + (i * 7));
 
       lessonsArr.push(lesson);
-      console.log(lessonsArr);
     }
 
     return lessonsArr;
+  }
+
+  getLessonWithDay(): void {
+    this.studentLessons = {};
+    for(let lesson of this.lessons) {
+      let date = new Date(lesson.lessonDate);
+      let day = this.lessonDays[date.getDay()];
+
+      if(!this.studentLessons.days.includes(day)) {
+        this.studentLessons.days.push(day);
+        this.studentLessons.lessons.push(lesson);
+      } else {
+        this.studentLessons.lessons.push(lesson);
+      }
+    }
   }
 
   openDialog(): void {
@@ -96,6 +114,7 @@ export class StudentsComponent implements OnInit {
     this.showVarSearch = true;
     this.showVarNew = false;
     this.showVarDelete = false;
+    this.showVarNewLesson = false;
   }
 
   toggleNew(): void {
