@@ -41,10 +41,10 @@
                 <mat-expansion-panel *ngFor="let day of studentLessons.days">
                   <mat-expansion-panel-header>
                     <mat-panel-title>
-                      {{ day }}
+                      {{ day }} ASD
                     </mat-panel-title>
                     <mat-panel-description>
-                      Órák száma: {{ days.length }}
+                      Órák száma: {{ day.length }}
                     </mat-panel-description>
                   </mat-expansion-panel-header>
                   <mat-expansion-panel *ngFor="let lesson of studentLessons.lessons">
