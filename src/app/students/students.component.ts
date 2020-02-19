@@ -46,8 +46,7 @@ export class StudentsComponent implements OnInit {
   
   getLessonsByStudentId(): void {
     this.lessonsService.getLessonsByStudentId(this.searchStudent)
-                       .subscribe(lessons => this.lessons = lessons,
-                                       () => this.getLessonWithDay);
+                       .subscribe(lessons => this.lessons = lessons);
   }
 
   add(): void {
@@ -138,7 +137,9 @@ export class StudentsComponent implements OnInit {
 
   toggleLessonSettings(): void {
     this.getLessonsByStudentId();
+    this.getLessonWithDay();
     this.showVarLessons = true;
+    this.showVarNewLesson = false;
   }
 
   toggleNewLessons(): void {
