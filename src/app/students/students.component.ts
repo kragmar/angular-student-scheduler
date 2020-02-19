@@ -21,7 +21,7 @@ export class StudentsComponent implements OnInit {
 
   lessons: Lesson[];
   newLesson: any = {};
-  studentLessons: any = {};
+  studentLessons: LessonWithDay;
   lessonTimes: string[] = ["12:50", "13:40", "14:30", "15:20", "16:10", "17:00", "17:50", "18:40", "19:30"];
   lessonTypes: string[] = ["Tanóra", "Gyakorló"];
   lessonDays: any = {"1": "Hétfő", "2": "Kedd", "3": "Szerda", "4": "Csütörtök", "5": "Péntek"};
@@ -95,7 +95,7 @@ export class StudentsComponent implements OnInit {
     for(let lesson of this.lessons) {
       let date = new Date(lesson.lessonDate);
       let day = this.lessonDays[date.getDay()];
-
+      console.log("ASD");
       if(!this.studentLessons.days.includes(day)) {
         this.studentLessons.days.push(day);
         this.studentLessons.lessons.push(lesson);
