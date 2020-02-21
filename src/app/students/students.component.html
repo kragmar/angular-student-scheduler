@@ -38,7 +38,7 @@
             <!-- Showing the student's lessons -->
             <ng-container *ngIf="showVarLessons">
               <mat-accordion>
-                <mat-expansion-panel *ngFor="let day of selectDays()">
+                <mat-expansion-panel *ngFor="let day of selectDays(lessons)">
                   <mat-expansion-panel-header>
                     <mat-panel-title>
                       {{ day }}
