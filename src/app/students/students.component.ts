@@ -148,8 +148,6 @@ export class StudentsComponent implements OnInit {
 
   toggleLessonSettings(): void {
     this.getLessonsByStudentId();
-    this.getLessonWithDay();
-    console.log("ASD2");
     this.showVarLessons = true;
     this.showVarNewLesson = false;
   }
