@@ -33,8 +33,8 @@ export class StudentsComponent implements OnInit {
   showVarLessons: boolean;
   showVarNewLesson: boolean;
 
-  constructor(private studentsService: StudentsService, private lessonsService: LessonsService, private dialog: MatDialog) { }
-  //constructor(private studentsService: StudentsMockService, private lessonsService: LessonsMockService, private dialog: MatDialog) { }
+  //constructor(private studentsService: StudentsService, private lessonsService: LessonsService, private dialog: MatDialog) { }
+  constructor(private studentsService: StudentsMockService, private lessonsService: LessonsMockService, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.getStudents();

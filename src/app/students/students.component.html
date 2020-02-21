@@ -44,7 +44,7 @@
                       {{ day }}
                     </mat-panel-title>
                     <mat-panel-description>
-                      Órák száma: {{ day.length }}
+                      Órák száma: 
                     </mat-panel-description>
                   </mat-expansion-panel-header>
                   <mat-expansion-panel *ngFor="let lesson of selectLessons(day)">
@@ -53,7 +53,7 @@
                         {{ lesson.lessonDate | date : "y-MM-dd" }} | {{ lesson.lessonStart }}
                       </mat-panel-title>
                       <mat-panel-description>
-                        Asd
+                        Placeholder
                       </mat-panel-description>
                     </mat-expansion-panel-header>
                   </mat-expansion-panel>
