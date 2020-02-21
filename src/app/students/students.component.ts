@@ -2,7 +2,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Student } from '../services/student';
 import { Lesson } from '../services/lesson';
 import { StudentsService } from '../services/students.service';
+import { StudentsMockService } from '../services/students-mock.service';
 import { LessonsService } from '../services/lessons.service';
+import { LessonsMockService } from '../services/lessons-mock.service';
 import { SaveDialogComponent } from '../save-dialog/save-dialog.component';
 
 import { MatDialog } from '@angular/material';
@@ -32,6 +34,7 @@ export class StudentsComponent implements OnInit {
   showVarNewLesson: boolean;
 
   constructor(private studentsService: StudentsService, private lessonsService: LessonsService, private dialog: MatDialog) { }
+  // constructor(private studentsService: StudentsMockService, private lessonsService: LessonsMockService, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.getStudents();
@@ -44,7 +47,8 @@ export class StudentsComponent implements OnInit {
   
   getLessonsByStudentId(): void {
     this.lessonsService.getLessonsByStudentId(this.searchStudent)
-                       .subscribe(lessons => this.lessons = lessons);
+                       .subscribe(lessons => this.lessons = lessons,
+                                  console.log("ASD " + this.lessons));
   }
 
   add(): void {

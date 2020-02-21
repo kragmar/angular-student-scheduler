@@ -31,6 +31,8 @@ import { SaveDialogComponent } from './save-dialog/save-dialog.component';
 import { UpdateDialogComponent } from './update-dialog/update-dialog.component';
 import { LessonsComponent } from './lessons/lessons.component';
 import { LessonsService } from './services/lessons.service';
+import { LessonsMockService } from './services/lessons-mock.service';
+import { StudentsMockService } from './services/students-mock.service';
 
 @NgModule({
   declarations: [
@@ -67,7 +69,7 @@ import { LessonsService } from './services/lessons.service';
     SaveDialogComponent,
     UpdateDialogComponent
   ],
-  providers: [DbService, MatDatepickerModule, StudentsService, LessonsService],
+  providers: [DbService, MatDatepickerModule, StudentsService, LessonsService, LessonsMockService, StudentsMockService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
