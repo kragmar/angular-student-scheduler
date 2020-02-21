@@ -47,8 +47,7 @@ export class StudentsComponent implements OnInit {
   
   getLessonsByStudentId(): void {
     this.lessonsService.getLessonsByStudentId(this.searchStudent)
-                       .subscribe(lessons => this.lessons = lessons,
-                                  console.log("ASD " + this.lessons));
+                       .subscribe(lessons => this.lessons = lessons);
   }
 
   add(): void {
@@ -106,7 +105,7 @@ export class StudentsComponent implements OnInit {
   }
 
   selectLessons(day: string): Lesson[] {
-    let lessons: any = {};
+    let lessons: any = [];
 
     for(let lesson of this.lessons) {
       let date = new Date(lesson.lessonDate);
@@ -147,6 +146,7 @@ export class StudentsComponent implements OnInit {
 
   toggleLessonView(): void {
     this.getLessonsByStudentId();
+    console.log(this.lessons);
     this.showVarLessons = true;
   }
 

@@ -24,14 +24,16 @@ export class LessonsMockService {
 
   // get("/api/lessons/student/:id")
   getLessonsByStudentId(student: Student): Observable<Lesson[]> {
-    let lessons = [];
+    /* let lessons = [];
     for(let lesson of LESSONS) {
       if(lesson.student === student) {
         lessons.push(lesson);
       }
     }
 
-    return of(lessons);
+    return of(lessons); */
+
+    return of(LESSONS);
   }
 
   // post("/api/lessons")
