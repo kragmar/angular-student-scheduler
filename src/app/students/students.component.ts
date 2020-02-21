@@ -102,7 +102,7 @@ export class StudentsComponent implements OnInit {
   }
 
   selectLessons(day: string): Lesson[] {
-    let lessons: Lesson[];
+    let lessons: any = {};
 
     for(let lesson of this.lessons) {
       let date = new Date(lesson.lessonDate);
