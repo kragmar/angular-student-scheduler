@@ -6,20 +6,20 @@ export const STUDENTS: Student[] = [
     name: "Teszt Elek",
     telNum: "+36 20 123 4567",
     email: "test@test.hu",
-    birthDate: "2020-02-21T00:00:00.000Z"
+    birthDate: new Date("1970-01-01")
   },
   {
     _id: "2",
     name: "Hali Gali",
     telNum: "+36 20 123 4567",
     email: "test@test.hu",
-    birthDate: "2020-02-22T00:00:00.000Z"
+    birthDate: new Date("2000-01-01")
   },
   {
     _id: "3",
     name: "Abraka Dabraka",
     telNum: "+36 20 123 4567",
     email: "test@test.hu",
-    birthDate: "2020-02-23T00:00:00.000Z"
+    birthDate: new Date("1000-01-01")
   }
 ]

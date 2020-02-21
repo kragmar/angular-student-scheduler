@@ -33,8 +33,8 @@ export class StudentsComponent implements OnInit {
   showVarLessons: boolean;
   showVarNewLesson: boolean;
 
-  constructor(private studentsService: StudentsService, private lessonsService: LessonsService, private dialog: MatDialog) { }
-  // constructor(private studentsService: StudentsMockService, private lessonsService: LessonsMockService, private dialog: MatDialog) { }
+  //constructor(private studentsService: StudentsService, private lessonsService: LessonsService, private dialog: MatDialog) { }
+  constructor(private studentsService: StudentsMockService, private lessonsService: LessonsMockService, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.getStudents();
@@ -91,13 +91,18 @@ export class StudentsComponent implements OnInit {
   }
 
   selectDays(): string[] {
-    let days: string[] = [];
+    let days = [];
+    let dates = [];
 
     for(let lesson of this.lessons) {
       let date = new Date(lesson.lessonDate);
-      let day = this.lessonDays[date.getDay()];
-      if(!days.includes(day)) {
-        days.push(day);
+      dates.push(date.getDay());
+    }
+    dates.sort();
+
+    for(let date of dates) {
+      if(!days.includes(this.lessonDays[date])) {
+        days.push(this.lessonDays[date]);
       }
     }
 
