@@ -90,11 +90,11 @@ export class StudentsComponent implements OnInit {
   }
 
   getLessonWithDay(): void {
+    console.log("ASD");
     this.studentLessons = {};
     for(let lesson of this.lessons) {
       let date = new Date(lesson.lessonDate);
       let day = this.lessonDays[date.getDay()];
-      console.log("ASD");
       if(!this.studentLessons.days.includes(day)) {
         this.studentLessons.days.push(day);
         this.studentLessons.lessons.push(lesson);
@@ -138,6 +138,7 @@ export class StudentsComponent implements OnInit {
   toggleLessonSettings(): void {
     this.getLessonsByStudentId();
     this.getLessonWithDay();
+    console.log("ASD2");
     this.showVarLessons = true;
     this.showVarNewLesson = false;
   }
