@@ -151,7 +151,6 @@ export class StudentsComponent implements OnInit {
 
   toggleLessonView(): void {
     this.getLessonsByStudentId();
-    console.log(this.lessons);
     this.showVarLessons = true;
   }
 
