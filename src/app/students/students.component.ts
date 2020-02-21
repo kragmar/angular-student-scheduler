@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Student } from '../services/student';
 import { Lesson } from '../services/lesson';
-import { LessonWithDay } from '../services/lesson-with-day';
 import { StudentsService } from '../services/students.service';
 import { LessonsService } from '../services/lessons.service';
 import { SaveDialogComponent } from '../save-dialog/save-dialog.component';
@@ -21,7 +20,6 @@ export class StudentsComponent implements OnInit {
 
   lessons: Lesson[];
   newLesson: any = {};
-  studentLessons: any = {};
   lessonTimes: string[] = ["12:50", "13:40", "14:30", "15:20", "16:10", "17:00", "17:50", "18:40", "19:30"];
   lessonTypes: string[] = ["Tanóra", "Gyakorló"];
   lessonDays: any = {"1": "Hétfő", "2": "Kedd", "3": "Szerda", "4": "Csütörtök", "5": "Péntek"};
@@ -89,19 +87,32 @@ export class StudentsComponent implements OnInit {
     return lessonsArr;
   }
 
-  getLessonWithDay(): void {
-    console.log("ASD");
-    this.studentLessons = {};
+  selectDays(): string[] {
+    let days: string[] = [];
+
     for(let lesson of this.lessons) {
       let date = new Date(lesson.lessonDate);
       let day = this.lessonDays[date.getDay()];
-      if(!this.studentLessons.days.includes(day)) {
-        this.studentLessons.days.push(day);
-        this.studentLessons.lessons.push(lesson);
-      } else {
-        this.studentLessons.lessons.push(lesson);
+      if(!days.includes(day)) {
+        days.push(day);
       }
     }
+
+    return days;
+  }
+
+  selectLessons(day: string): Lesson[] {
+    let lessons: Lesson[];
+
+    for(let lesson of this.lessons) {
+      let date = new Date(lesson.lessonDate);
+      let dayString = this.lessonDays[date.getDay()];
+      if(day === dayString) {
+        lessons.push(lesson);
+      }
+    }
+
+    return lessons;
   }
 
   openDialog(): void {

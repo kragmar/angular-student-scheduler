@@ -38,7 +38,7 @@
             <!-- Showing the student's lessons -->
             <ng-container *ngIf="showVarLessons">
               <mat-accordion>
-                <mat-expansion-panel *ngFor="let day of studentLessons.days">
+                <mat-expansion-panel *ngFor="let day of selectDays()">
                   <mat-expansion-panel-header>
                     <mat-panel-title>
                       {{ day }} ASD
@@ -47,7 +47,7 @@
                       Órák száma: {{ day.length }}
                     </mat-panel-description>
                   </mat-expansion-panel-header>
-                  <mat-expansion-panel *ngFor="let lesson of studentLessons.lessons">
+                  <mat-expansion-panel *ngFor="let lesson of selectLessons(day)">
                     <mat-expansion-panel-header>
                       <mat-panel-title>
                         {{ lesson.lessonDate | date : "y-MM-dd" }} | {{ lesson.lessonStart }}
